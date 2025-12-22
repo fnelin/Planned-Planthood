@@ -164,6 +164,13 @@ button
   --input-padding: 1.25rem;
   --input-radius: 25px;
 
+  /*Gränsvärden till mediaqueries*/
+  --desktop-w-max: 100px;
+  --desktop-w-min: 1024px;
+  --tablet-w-max: 1023px;
+  --tablet-w-min: 768px;
+  --mobile-w-max: 767px;
+  --mobile-w-min: 320px;
 }
 
 /*** Global/base ***/
@@ -201,9 +208,14 @@ a
 
 /* generella formateringsregler för de tre olika responsive designerna*/
 
+
 /*Mobil*/
 @media(max-width:767px)
 {
+  .headerMobileMenu>*
+  {
+    display: inline;
+  }
 
   h1,
   h2
@@ -240,6 +252,10 @@ a
 /*Tablet*/
 @media(min-width:768px)
 {
+  .headerMobileMenu
+  {
+    display: none;
+  }
 
   h1,
   h2
@@ -275,6 +291,10 @@ a
 /*Desktop*/
 @media(min-width:1024px)
 {
+  .headerMobileMenu
+  {
+    display: none;
+  }
 
   h1,
   h2
@@ -325,7 +345,16 @@ header
 
 .headerMenu
 {
-  width: 30%;
+  @media(min-width:768px)
+  {
+    width: 50%;
+  }
+
+  @media(min-width:1024px)
+  {
+    width: 35%;
+  }
+
   color: var(--clr-accent);
   text-transform: uppercase;
   font-weight: var(--fw-bold);
@@ -337,14 +366,18 @@ header
   }
 }
 
+
+
 .headerLogo
 {
+  /*Sätter färgen som svg använder i fill="currencolor"*/
+  color: var(--clr-accent);
   display: flex;
 }
 
 main
 {
-  section
+  >div
   {
     padding-block: calc(var(--spacing-base)*2);
   }
@@ -420,22 +453,26 @@ skärmupplösningen
   }
 }
 
+
+
 .information
 {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   gap: 2rem;
+
+  @media(max-width: 768px)
+  {
+    flex-direction: column;
+
+    &:has(form)
+    {
+      flex-direction: column-reverse;
+    }
+  }
 }
 
-.ingress
-{
-  /*Max väljer mellan Display och Tablet medans 80% ska komma in vid mobile*/
-  /* width: min(max(55%, 70ch), 80%); var osäker på om clamp skulle fungera så låter denna ligga kvar för påminnelse*/
-  width: clamp(55%, 70ch, 80%);
-  padding-block: min(1rem, 2rem);
-  font-size: var(--fs-200);
-}
 
 .informationForm
 {
@@ -456,6 +493,15 @@ skärmupplösningen
 
   display: grid;
   gap: calc(var(--spacing-base)*2);
+}
+
+.ingress
+{
+  /*Max väljer mellan Display och Tablet medans 80% ska komma in vid mobile*/
+  /* width: min(max(55%, 70ch), 80%); var osäker på om clamp skulle fungera så låter denna ligga kvar för påminnelse*/
+  width: clamp(55%, 70ch, 80%);
+  padding-block: min(1rem, 2rem);
+  font-size: var(--fs-200);
 }
 
 input
@@ -492,19 +538,87 @@ input
   border-radius: 100%;
 }
 
+.hideWhenMobile
+{
+  @media(max-width:767px)
+  {
+    display: none;
+  }
+
+  @media(min-width:768px)
+  {
+    display: inline;
+  }
+}
+
 .history
 {
   width: 40%;
   display: grid;
   gap: calc(var(--spacing-base)*2);
   font-size: small;
+
+  .greenButton
+  {
+    justify-self: end;
+    text-align: center;
+    width: 22ch;
+  }
 }
 
 footer
 {
-  color: white;
+  display: flex;
+  justify-content: space-between;
   background: var(--clr-green-400);
+  padding: var(--spacing-base);
+  color: var(--clr-neutral-100)
 }
+
+.footerAbout
+{
+  width: 60%;
+  display: grid;
+  gap: var(--spacing-base);
+
+  h3
+  {
+    font-weight: bold;
+  }
+
+  p
+  {
+    font-size: var(--fs-200);
+  }
+
+  a
+  {
+    color: inherit;
+    font-weight: bold;
+  }
+}
+
+.footerMenu
+{
+  nav
+  {
+    height: 100%;
+
+  }
+
+  ul
+  {
+    height: 100%;
+    display: grid;
+    align-content: space-evenly;
+  }
+
+  a
+  {
+    color: inherit;
+  }
+}
+
 
 /*** Composition ***/
 .flow>*+*

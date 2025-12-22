@@ -19,13 +19,14 @@
                 <div class="headerLogo">
                     <img src="./assets/images/logo.svg" width="50px" height="50px">
                     <svg width="100" height="50" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
-                        <text x="0" y="25" font-family="Open Sans" font-size="12" fill="green" text-anchor="center">
+                        <text x="0" y="25" font-family="Open Sans" font-size="12" fill="currentcolor"
+                            text-anchor="center">
                             <tspan>PLANNED</tspan>
                             <tspan x="0" dy="15">PLANTHOOD</tspan>
                         </text>
                     </svg>
                 </div>
-                <nav class="headerMenu">
+                <nav class="headerMenu hideWhenMobile">
                     <span class="visually-hidden">Meny</span>
                     <ul role="list">
                         <li><a href="#">Hem</a></li>
@@ -34,6 +35,9 @@
                         <li><a href="#">Kontakt</a></li>
                     </ul>
                 </nav>
+                <div class="headerMobileMenu">
+                    <img src="./assets/images/icon-menu.svg" />
+                </div>
             </section>
         </header>
 
@@ -99,19 +103,18 @@
         </main>
 
         <footer>
-            <div>
+            <div class="footerAbout">
                 <h3>Om oss</h3>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, veniam ducimus aut sint atque ullam
                     alias perspiciatis
                     fuga. Consequuntur nesciunt ea corrupti aperiam fugit inventore ratione earum. Iure, eius molestias?
                 </p>
-
-                <a>Telefon:020-1234567</a>
-                <a>E-post:info@plannedplant.com</a>
+                <a>Telefon: 020-1234567</a>
+                <a>E-post: info@plannedplant.com</a>
             </div>
-            <div>
-                <nav class="footerMenu">
-                    <ul>
+            <div class="footerMenu hideWhenMobile">
+                <nav>
+                    <ul role="list">
                         <li><a href="#">Hem</a></li>
                         <li><a href="#">Historik</a></li>
                         <li><a href="#">Tips</li>
