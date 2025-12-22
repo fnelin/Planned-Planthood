@@ -337,6 +337,11 @@ header
   }
 }
 
+.headerLogo
+{
+  display: flex;
+}
+
 main
 {
   section
