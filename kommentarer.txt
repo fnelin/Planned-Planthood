@@ -1,0 +1,7 @@
+-Kommenterade bort color-schema för body i css då jag inte hinner ta fram färgschema för darkmode.
+-La till tre containers för de huvudsakliga upplösningarna desktop >= 1024, tablet >= 768 & mobil < 768.
+-Skapade två containers för resursfiler. En för avatarer och flyttade in en default samt en för fotografier.
+-Länk bilder till hero grid:Bas: https://picsum.photos/160/250 Dubbel https://picsum.photos/320/500 Dubbel bredd https://picsum.photos/320/250 
+-Länk för bild till cards:https://picsum.photos/240
+-Till herobanner griddet tog jag hjälp av cssgrid-generator.netlify.app för designen och sen namnsatte areas i varje enskild mediaquery enligt information från www.w3schools.com/css/css_grid_item_name.asp
+-För att placera skicka knappen i själva textfältet tog jag först hjälp av https://stackoverflow.com/questions/69313378/button-inside-input-html-css men kom senare på att det var en dum lösning och istället tog bort border på textboxen, lät submit ligga fritt och sätta border på omslutande div istället.
