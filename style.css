@@ -190,7 +190,7 @@ h3
 a
 {
   text-decoration: none;
-  color: var(--clr-accent);
+  color: var(--clr-green-400);
 
   &:hover,
   &:focus-visible
@@ -320,11 +320,15 @@ header
 {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .headerMenu
 {
   width: 30%;
+  color: var(--clr-accent);
+  text-transform: uppercase;
+  font-weight: var(--fw-bold);
 
   ul
   {
@@ -416,6 +420,7 @@ skärmupplösningen
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  gap: 2rem;
 }
 
 .ingress
