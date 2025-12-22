@@ -72,6 +72,13 @@ main
   padding: 0;
 }
 
+/*Från Kevin Powells video FormStyling Essentials*/
+input,
+button
+{
+  font: inherit;
+}
+
 /*** Theme ***/
 
 :root
@@ -198,13 +205,19 @@ a
 @media(max-width:767px)
 {
 
+  h1,
+  h2
+  {
+    font-size: var(--fs-500);
+  }
+
   .container
   {
     width: 320px;
     margin: auto;
   }
 
-  .herobanner
+  .heroBanner
   {
     border: 8px solid var(--clr-neutral-100);
     grid-template-columns: repeat(2, 1fr);
@@ -227,13 +240,20 @@ a
 /*Tablet*/
 @media(min-width:768px)
 {
+
+  h1,
+  h2
+  {
+    font-size: var(--fs-600);
+  }
+
   .container
   {
     width: 640px;
     margin: auto;
   }
 
-  .herobanner
+  .heroBanner
   {
     border: 12px solid var(--clr-neutral-100);
     grid-template-columns: repeat(3, 1fr);
@@ -255,12 +275,19 @@ a
 /*Desktop*/
 @media(min-width:1024px)
 {
+
+  h1,
+  h2
+  {
+    font-size: var(--fs-600);
+  }
+
   .container
   {
     width: 1024px;
   }
 
-  .herobanner
+  .heroBanner
   {
     border: 24px solid var(--clr-neutral-100);
     grid-template-columns: repeat(6, 1fr);
@@ -289,13 +316,13 @@ header
   background-color: var(--clr-neutral-100);
 }
 
-.header_bar
+.headerBar
 {
   display: flex;
   justify-content: space-between;
 }
 
-.header_menu
+.headerMenu
 {
   width: 30%;
 
@@ -340,7 +367,7 @@ Använde https: //cssgrid-generator.netlify.app/ för att designa grid
 Och instruktioner ifrån https: //www.w3schools.com/css/css_grid_item_name.asp
 för att placera ut bilderna enligt mall.
 */
-.herobanner
+.heroBanner
 {
   box-shadow: var(--border-shadow);
   display: grid;
@@ -389,20 +416,36 @@ skärmupplösningen
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-
-  >form
-  {
-    width: 30%;
-    display: grid;
-    gap: calc(var(--spacing-base)*2);
-  }
 }
 
 .ingress
 {
-  width: 50%;
-  padding: 2rem;
+  /*Max väljer mellan Display och Tablet medans 80% ska komma in vid mobile*/
+  /* width: min(max(55%, 70ch), 80%); var osäker på om clamp skulle fungera så låter denna ligga kvar för påminnelse*/
+  width: clamp(55%, 70ch, 80%);
+  padding-block: min(1rem, 2rem);
   font-size: var(--fs-200);
+}
+
+.informationForm
+{
+
+  /*
+  REFACTOR - Inte nöjd med att baka in media queries för att få formulärets
+  flexbox att bli större när skärmen blir mindre.
+  */
+  @media(min-width:768px)
+  {
+    width: 50%;
+  }
+
+  @media(min-width:1024px)
+  {
+    width: 30%;
+  }
+
+  display: grid;
+  gap: calc(var(--spacing-base)*2);
 }
 
 input
@@ -422,7 +465,7 @@ input
   border-radius: var(--input-radius);
 }
 
-.sendEmail
+.greenButton
 {
   color: var(--clr-neutral-100);
   background-color: var(--clr-green-400);
@@ -432,10 +475,9 @@ input
   padding-block: 0.4rem;
 }
 
-.greenround
+.greenRound
 {
-  width: 25%;
-  padding: min(5%, 3rem);
+  padding: max(10%, 3rem);
   background: var(--clr-green-400);
   border-radius: 100%;
 }
@@ -446,11 +488,6 @@ input
   display: grid;
   gap: calc(var(--spacing-base)*2);
   font-size: small;
-}
-
-h2
-{
-  font-size: var(--fs-600);
 }
 
 footer
