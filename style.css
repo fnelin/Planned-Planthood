@@ -330,6 +330,70 @@ a
   }
 }
 
+.cardsGallery
+{
+  display: grid;
+  /*Magic formula from mr Powell*/
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: calc(var(--spacing-base)*0.5);
+}
+
+.card
+{
+  display: grid;
+  grid-template-rows: subgrid;
+  /*
+  Satte span 5 istället för 1/6 för att fortsätta kunna wrappa korten
+  när container width ändras
+  */
+  grid-row: span 5;
+}
+
+.cardSelectors
+{
+  display: flex;
+  gap: calc(var(--spacing-base)*0.5);
+}
+
+.selector
+{
+  padding-inline: 1ch;
+  border-radius: 25px;
+  color: var(--clr-neutral-100);
+  background-color: aliceblue;
+}
+
+.selectorFlower
+{
+  background-color: var(--clr-flower);
+}
+
+.selectorEdible
+{
+  background-color: var(--clr-edible);
+}
+
+.selectorGreen
+{
+  background-color: var(--clr-green);
+}
+
+.cardUser
+{
+  display: flex;
+  gap: var(--spacing-base);
+}
+
+.cardUserDetails
+{
+  display: grid;
+}
+
+.center
+{
+  justify-self: center;
+}
+
 body
 {
   font-family: var(--font-base);
