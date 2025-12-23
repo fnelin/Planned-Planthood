@@ -215,9 +215,11 @@ a
 /*Mobil*/
 @media(max-width:767px)
 {
-  .headerMobileMenu>*
+  .container
   {
-    display: inline;
+    width: 320px;
+    margin: auto;
+    transition: var(--transition-base);
   }
 
   h1,
@@ -226,11 +228,9 @@ a
     font-size: var(--fs-500);
   }
 
-  .container
+  .headerMobileMenu>*
   {
-    width: 320px;
-    margin: auto;
-    transition: var(--transition-base);
+    display: inline;
   }
 
   .heroBanner
@@ -256,9 +256,11 @@ a
 /*Tablet*/
 @media(min-width:768px)
 {
-  .headerMobileMenu
+  .container
   {
-    display: none;
+    width: 640px;
+    margin: auto;
+    transition: var(--transition-base);
   }
 
   h1,
@@ -267,11 +269,9 @@ a
     font-size: var(--fs-600);
   }
 
-  .container
+  .headerMobileMenu
   {
-    width: 640px;
-    margin: auto;
-    transition: var(--transition-base);
+    display: none;
   }
 
   .heroBanner
@@ -296,9 +296,10 @@ a
 /*Desktop*/
 @media(min-width:1024px)
 {
-  .headerMobileMenu
+  .container
   {
-    display: none;
+    width: 1024px;
+    transition: var(--transition-base);
   }
 
   h1,
@@ -307,10 +308,9 @@ a
     font-size: var(--fs-600);
   }
 
-  .container
+  .headerMobileMenu
   {
-    width: 1024px;
-    transition: var(--transition-base);
+    display: none;
   }
 
   .heroBanner
