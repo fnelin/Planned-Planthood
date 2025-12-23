@@ -1,0 +1,19 @@
+                        <div class="card">
+                            <img src="." class="cardImage" width="240px" height="240px">
+                            <ul class="cardSelectors" role="list">
+                                <li><span class="selector"></span></li>
+                                <li><span class="selector"></span></li>
+                                <li><span class="selector"></span></li>
+                            </ul>
+                            <h3></h3>
+                            <p></p>
+                            <div class="cardUser">
+                                <div class="cardUserAvatar">
+                                    <img src="./assets/images/icon-avatar.svg">
+                                </div>
+                                <div class="cardUserDetails">
+                                    <span class="cardUserName"></span>
+                                    <span class="cardUserDate"></span>
+                                </div>
+                            </div>
+                        </div>
