@@ -352,6 +352,7 @@ a
 .cardSelectors
 {
   display: flex;
+  flex-wrap: wrap;
   gap: calc(var(--spacing-base)*0.5);
 }
 
@@ -360,22 +361,7 @@ a
   padding-inline: 1ch;
   border-radius: 25px;
   color: var(--clr-neutral-100);
-  background-color: aliceblue;
-}
-
-.selectorFlower
-{
-  background-color: var(--clr-flower);
-}
-
-.selectorEdible
-{
-  background-color: var(--clr-edible);
-}
-
-.selectorGreen
-{
-  background-color: var(--clr-green);
+  background-color: var(--clr-primary);
 }
 
 .cardUser
@@ -756,4 +742,61 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+/*Lägger Selectors så de inte ligger i vägen under utvecklingen.*/
+
+.selectorFlower
+{
+  background-color: var(--clr-flower);
+}
+
+.selectorEdible
+{
+  background-color: var(--clr-edible);
+}
+
+.selectorGreen
+{
+  background-color: var(--clr-green);
+}
+
+.selectorRobust
+{
+  background-color: var(--clr-robust);
+}
+
+.selectorColorful
+{
+  background-color: var(--clr-colorful);
+}
+
+.selectorSunloving
+{
+  background-color: var(--clr-sunloving);
+}
+
+.selectorAir
+{
+  background-color: var(--clr-air);
+}
+
+.selectorDecorative
+{
+  background-color: var(--clr-decorative);
+}
+
+.selectorEasy
+{
+  background-color: var(--clr-easy);
+}
+
+.selectorFragrant
+{
+  background-color: var(--clr-fragrant);
+}
+
+.selectorFast
+{
+  background-color: var(--clr-fast);
 }
