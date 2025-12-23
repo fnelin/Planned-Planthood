@@ -164,13 +164,16 @@ button
   --input-padding: 1.25rem;
   --input-radius: 25px;
 
-  /*Gränsvärden till mediaqueries*/
+  /*FUNKAR INTE :( Gränsvärden till mediaqueries*/
   --desktop-w-max: 100px;
   --desktop-w-min: 1024px;
   --tablet-w-max: 1023px;
   --tablet-w-min: 768px;
   --mobile-w-max: 767px;
   --mobile-w-min: 320px;
+
+  /*Mjuka upp övergångarna när man ändrar upplösningen*/
+  --transition-base: all 200ms ease-in-out;
 }
 
 /*** Global/base ***/
@@ -227,6 +230,7 @@ a
   {
     width: 320px;
     margin: auto;
+    transition: var(--transition-base);
   }
 
   .heroBanner
@@ -267,6 +271,7 @@ a
   {
     width: 640px;
     margin: auto;
+    transition: var(--transition-base);
   }
 
   .heroBanner
@@ -305,6 +310,7 @@ a
   .container
   {
     width: 1024px;
+    transition: var(--transition-base);
   }
 
   .heroBanner
@@ -329,6 +335,7 @@ body
   font-family: var(--font-base);
   background-color: var(--clr-accent-light-1);
   color: var(--clr-primary-dark);
+
 }
 
 header
@@ -554,6 +561,12 @@ input
 .history
 {
   width: 40%;
+
+  @media (max-width:767px)
+  {
+    width: 100%;
+  }
+
   display: grid;
   gap: calc(var(--spacing-base)*2);
   font-size: small;
