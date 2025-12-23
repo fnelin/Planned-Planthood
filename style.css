@@ -347,6 +347,19 @@ a
   när container width ändras
   */
   grid-row: span 5;
+
+  border: 1px solid var(--clr-neutral-200);
+  box-shadow: var(--border-shadow);
+
+  >*:not(img)
+  {
+    margin-inline: var(--spacing-base);
+  }
+
+  >p
+  {
+    font-size: var(--fs-300);
+  }
 }
 
 .cardSelectors
@@ -354,11 +367,16 @@ a
   display: flex;
   flex-wrap: wrap;
   gap: calc(var(--spacing-base)*0.5);
+
 }
 
 .selector
 {
+  text-transform: uppercase;
+  font-size: x-small;
+  font-weight: bold;
   padding-inline: 1ch;
+  padding-block: 0.5ch;
   border-radius: 25px;
   color: var(--clr-neutral-100);
   background-color: var(--clr-primary);
@@ -378,6 +396,7 @@ a
 .center
 {
   justify-self: center;
+  padding-block: var(--spacing-base);
 }
 
 body
