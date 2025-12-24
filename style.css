@@ -373,9 +373,7 @@ a
   /*WidthUnset för att .card justify-items stretch ska fylla ut bilden kant till kant. heightAuto för att säkerställa korrekt aspect ratio.*/
   width:unset;
   height: auto;
-
 }
-
 
 .cardSelectors
 {
