@@ -248,6 +248,8 @@ a
       width: 120px;
       height: 120px;
       overflow: hidden;
+      /*La till nedan för att bilderna inte ska se skeva ut när gridcellerna ändras och bilderna placeras annorlunda jämfört med desktop och orginal-apect-ratio*/
+      object-fit: cover;
     }
   }
 
@@ -288,6 +290,7 @@ a
       width: 240px;
       height: 240px;
       overflow: hidden;
+      object-fit: cover;
     }
   }
 
@@ -324,8 +327,10 @@ a
 
     img
     {
+      /*Unset på dimensionerna behövs då värdet annars kommer ifrån tidigare mediaquery*/
       width: unset;
       height: unset;
+      object-fit: cover;
     }
   }
 }
@@ -351,6 +356,8 @@ a
   border: 1px solid var(--clr-neutral-200);
   box-shadow: var(--border-shadow);
 
+  justify-items: stretch;
+
   >*:not(img)
   {
     margin-inline: var(--spacing-base);
@@ -361,6 +368,14 @@ a
     font-size: var(--fs-300);
   }
 }
+
+.cardImage{
+  /*WidthUnset för att .card justify-items stretch ska fylla ut bilden kant till kant. heightAuto för att säkerställa korrekt aspect ratio.*/
+  width:unset;
+  height: auto;
+  object-fit: fill;
+}
+
 
 .cardSelectors
 {
