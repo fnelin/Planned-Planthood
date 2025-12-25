@@ -352,9 +352,9 @@ a
   när container width ändras
   */
   grid-row: span 5;
-
   border: 1px solid var(--clr-neutral-200);
   box-shadow: var(--border-shadow);
+
   justify-items: stretch;
 
   gap: 1rem;
@@ -372,9 +372,11 @@ a
 
 .cardImage
 {
+  grid-area: 1/1;
   /*WidthUnset för att .card justify-items stretch ska fylla ut bilden kant till kant. heightAuto för att säkerställa korrekt aspect ratio.*/
   width: unset;
   height: auto;
+
 }
 
 .cardSelectors
@@ -814,6 +816,15 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+/*Vattenmärket för cards*/
+.watermark
+{
+  grid-area: 1/1;
+  opacity: 25%;
+  align-self: center;
+  justify-self: center;
 }
 
 /*Lägger Selectors så de inte ligger i vägen under utvecklingen.*/
