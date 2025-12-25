@@ -4,5 +4,5 @@
 -Länk bilder till hero grid:Bas: https://picsum.photos/160/250 Dubbel https://picsum.photos/320/500 Dubbel bredd https://picsum.photos/320/250 
 -Länk för bild till cards:https://picsum.photos/240
 -Till herobanner griddet tog jag hjälp av cssgrid-generator.netlify.app för designen och sen namnsatte areas i varje enskild mediaquery enligt information från www.w3schools.com/css/css_grid_item_name.asp
--För att placera skicka knappen till formuläret i textfältet tog jag först hjälp av https://stackoverflow.com/questions/69313378/button-inside-input-html-css men kom senare på att det var en dum lösning och istället tog bort border på textboxen, lät submit ligga fritt och sätta border på omslutande div istället.
--Hittade bloggen https://www.codestudy.net/blog/force-an-image-to-fit-and-keep-aspect-ratio/ för att hjälpa mig förstå hur man i css skalar bilder även om w/h är satta i html.
+-För att placera skicka knappen till formuläret i textfältet tog jag först hjälp av https://stackoverflow.com/questions/69313378/button-inside-input-html-css men kom senare på att det var en dum lösning (i mobil vy bryter sig knappen ur textrutan) och istället tog bort border på textboxen, lät submit ligga fritt och sätta border på omslutande div istället.
+-Hittade bloggen https://www.codestudy.net/blog/force-an-image-to-fit-and-keep-aspect-ratio/ för att hjälpa mig förstå hur man i css skalar bilder.
