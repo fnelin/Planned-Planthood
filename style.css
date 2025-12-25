@@ -332,7 +332,6 @@ a
     --img-hero-columns: var(--img-hero-columns-large);
     --img-hero-rows: var(--img-hero-rows-large);
     --img-hero-area: var(--img-hero-area-large);
-    grid-template-areas: ;
 
     img
     {
