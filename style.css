@@ -491,15 +491,6 @@ header
   padding: 14px 10px;
   transition: 350ms;
 
-  &:hover,
-  &:focus
-  {
-    color: var(--clr-neutral-100);
-    background-color: var(--clr-accent);
-    text-decoration: none;
-    cursor: pointer;
-    outline: none;
-  }
 }
 
 .headerLogo
@@ -507,6 +498,7 @@ header
   /*Sätter färgen som svg använder i fill="currencolor"*/
   color: var(--clr-accent);
   display: flex;
+  transition: 350ms;
 }
 
 .headerLogo,
