@@ -369,9 +369,10 @@ a
   }
 }
 
-.cardImage{
+.cardImage
+{
   /*WidthUnset för att .card justify-items stretch ska fylla ut bilden kant till kant. heightAuto för att säkerställa korrekt aspect ratio.*/
-  width:unset;
+  width: unset;
   height: auto;
 }
 
@@ -397,16 +398,25 @@ a
 
 .cardUser
 {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
   gap: var(--spacing-base);
+  margin-block: 1rem;
 }
 
-.cardUserAvatar{
- background-color: var(--clr-neutral-200);
- border-radius: 100%;
- border: .2rem solid var(--clr-neutral-900);
- overflow:hidden;
+.cardUserAvatar
+{
+  background-color: var(--clr-neutral-200);
+  border-radius: 100%;
+  border: .15rem solid var(--clr-neutral-900);
+  aspect-ratio: 1/1;
+  overflow: hidden;
 
+  >img
+  {
+    /*Tvingades zooma in på default bilden på avatarer för att "kroppen" inte ska se avhuggen ut*/
+    transform: scale(1.2);
+  }
 }
 
 .cardUserDetails
@@ -416,9 +426,10 @@ a
 
 }
 
-.cardUserDetailsName{
-    color:var(--clr-primary);
-    font-weight: var(--fw-600);
+.cardUserDetailsName
+{
+  color: var(--clr-accent);
+  font-weight: var(--fw-600);
 }
 
 .center
@@ -580,6 +591,7 @@ skärmupplösningen
 
 .informationForm
 {
+
   /*
   REFACTOR - Inte nöjd med att baka in media queries för att få formulärets
   flexbox att bli större när skärmen blir mindre.
