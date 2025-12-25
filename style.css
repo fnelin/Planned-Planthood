@@ -233,6 +233,7 @@ a
   &:focus-visible
   {
     text-decoration: underline;
+    outline: none;
   }
 }
 
@@ -482,20 +483,22 @@ header
   {
     display: flex;
     justify-content: space-between;
-
   }
 }
 
 .headerMenuLink
 {
   padding: 14px 10px;
+  transition: 350ms;
 
-  &:hover
+  &:hover,
+  &:focus
   {
     color: var(--clr-neutral-100);
     background-color: var(--clr-accent);
     text-decoration: none;
     cursor: pointer;
+    outline: none;
   }
 }
 
@@ -505,6 +508,22 @@ header
   color: var(--clr-accent);
   display: flex;
 }
+
+.headerLogo,
+.headerMenuLink
+{
+
+  &:hover,
+  &:focus
+  {
+    color: var(--clr-neutral-100);
+    background-color: var(--clr-accent);
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+  }
+}
+
 
 body
 {
@@ -661,6 +680,11 @@ input
   border-style: none;
   border-radius: var(--input-radius);
   padding-inline: var(--input-padding);
+
+  &:focus
+  {
+    outline: none;
+  }
 }
 
 .wrapInputs
@@ -680,12 +704,15 @@ input
   border-radius: var(--input-radius);
   padding-inline: var(--input-padding);
   padding-block: 0.4rem;
+  transition: 350ms;
 
-  &:hover
+  &:hover,
+  &:focus
   {
     color: var(--clr-green-400);
     background-color: var(--clr-neutral-100);
     text-decoration: none;
+    outline: none;
   }
 }
 
