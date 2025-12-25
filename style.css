@@ -662,7 +662,7 @@ för att placera ut bilderna enligt mall.
   /*Max väljer mellan Display och Tablet medans 80% ska komma in vid mobile*/
   /* width: min(max(55%, 70ch), 80%); var osäker på om clamp skulle fungera så låter denna ligga kvar för påminnelse*/
   width: clamp(55%, 70ch, 80%);
-  padding-block: min(1rem, 2rem);
+  padding-block: 1rem;
   font-size: var(--fs-200);
 }
 
