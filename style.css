@@ -165,7 +165,7 @@ button
   --input-radius: 25px;
 
   /*Mjuka upp övergångarna när man ändrar upplösningen
-  (överarbetade för egen tydlighet)/
+  (överarbetade för egen tydlighet)*/
   --transition-element: all;
   --transition-time: 300ms;
   --transition-effect: linear;
@@ -180,30 +180,36 @@ button
   --container-transition: var(--transition-base);
 
   /*Variabler till herobilden samlade på ett ställe för att sättas i mediaqueries*/
-  --border-hero-small: calc(var(--border-hero-medium)*0.75);
-  --border-hero-medium: 12px;
-  --border-hero-large: calc(var(--border-hero-medium)*2);
+  --hero-border-small: calc(var(--hero-border-medium)*0.75);
+  --hero-border-medium: 12px;
+  --hero-border-large: calc(var(--hero-border-medium)*2);
 
-  --img-hero-size-small: 120px;
-  --img-hero-size-medium: 240px;
-  --img-hero-size-large: unset;
+  --hero-img-size-small: 120px;
+  --hero-img-size-medium: 240px;
+  --hero-img-size-large: unset;
 
-  --img-hero-columns-small: repeat(2, 1fr);
-  --img-hero-columns-medium: repeat(3, 1fr);
-  --img-hero-columns-large: repeat(6, 1fr);
+  /*
+Använde https: //cssgrid-generator.netlify.app/ för att designa grid
+Och instruktioner ifrån https: //www.w3schools.com/css/css_grid_item_name.asp
+för att placera ut bilderna enligt mall.
+*/
 
-  --img-hero-rows-small: repeat(3, 1fr);
-  --img-hero-rows-medium: repeat(2, 1fr);
-  --img-hero-rows-large: repeat(2, 1fr);
+  --hero-img-columns-small: repeat(2, 1fr);
+  --hero-img-columns-medium: repeat(3, 1fr);
+  --hero-img-columns-large: repeat(6, 1fr);
 
-  --img-hero-area-small:
+  --hero-img-rows-small: repeat(3, 1fr);
+  --hero-img-rows-medium: repeat(2, 1fr);
+  --hero-img-rows-large: repeat(2, 1fr);
+
+  --hero-img-gridarea-small:
     'imgOne imgTwo'
     'imgThree imgFour'
     'imgFive imgSix';
-  --img-hero-area-medium:
+  --hero-img-gridarea-medium:
     'imgOne imgTwo imgThree'
     'imgFour imgFive imgSix';
-  --img-hero-area-large:
+  --hero-img-gridarea-large:
     'imgOne imgOne imgTwo imgThree imgFour imgFour'
     'imgOne imgOne imgFive imgFive imgSix imgSix';
 }
@@ -242,8 +248,7 @@ a
   }
 }
 
-/* generella formateringsregler för de tre olika responsive designerna*/
-
+/* Generella formateringsregler för de tre olika responsive designerna*/
 
 /*Mobil*/
 @media(max-width:767px)
@@ -266,14 +271,14 @@ a
 
   .heroBanner
   {
-    --border-hero: var(--border-hero-small);
-    --img-hero-columns: var(--img-hero-columns-small);
-    --img-hero-rows: var(--img-hero-rows-small);
-    --img-hero-area: var(--img-hero-area-small);
+    --border-hero: var(--hero-border-small);
+    --hero-img-columns: var(--hero-img-columns-small);
+    --hero-img-rows: var(--hero-img-rows-small);
+    --hero-img-gridarea-: var(--hero-img-gridarea-small);
 
     >img
     {
-      --image-hero-size: var(--img-hero-size-small);
+      --image-hero-size: var(--hero-img-size-small);
     }
   }
 }
@@ -299,14 +304,14 @@ a
 
   .heroBanner
   {
-    --border-hero: var(--border-hero-medium);
-    --img-hero-columns: var(--img-hero-columns-medium);
-    --img-hero-rows: var(--img-hero-rows-medium);
-    --img-hero-area: var(--img-hero-area-medium);
+    --border-hero: var(--hero-border-medium);
+    --hero-img-columns: var(--hero-img-columns-medium);
+    --hero-img-rows: var(--hero-img-rows-medium);
+    --hero-img-gridarea-: var(--hero-img-gridarea-medium);
 
     img
     {
-      --image-hero-size: var(--img-hero-size-medium);
+      --image-hero-size: var(--hero-img-size-medium);
     }
   }
 }
@@ -332,14 +337,14 @@ a
 
   .heroBanner
   {
-    --border-hero: var(--border-hero-large);
-    --img-hero-columns: var(--img-hero-columns-large);
-    --img-hero-rows: var(--img-hero-rows-large);
-    --img-hero-area: var(--img-hero-area-large);
+    --border-hero: var(--hero-border-large);
+    --hero-img-columns: var(--hero-img-columns-large);
+    --hero-img-rows: var(--hero-img-rows-large);
+    --hero-img-gridarea-: var(--hero-img-gridarea-large);
 
     img
     {
-      --image-hero-size: var(--img-hero-size-large);
+      --image-hero-size: var(--hero-img-size-large);
     }
   }
 }
@@ -579,19 +584,15 @@ main
 
 }
 
-/*
-Använde https: //cssgrid-generator.netlify.app/ för att designa grid
-Och instruktioner ifrån https: //www.w3schools.com/css/css_grid_item_name.asp
-för att placera ut bilderna enligt mall.
-*/
+
 .heroBanner
 {
   border: var(--border-hero) solid var(--clr-neutral-100);
   box-shadow: var(--border-shadow);
   display: grid;
-  grid-template-columns: var(--img-hero-columns);
-  grid-template-rows: var(--img-hero-rows);
-  grid-template-areas: var(--img-hero-area);
+  grid-template-columns: var(--hero-img-columns);
+  grid-template-rows: var(--hero-img-rows);
+  grid-template-areas: var(--hero-img-gridarea-);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 
