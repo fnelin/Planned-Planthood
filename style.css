@@ -270,7 +270,6 @@ a
       --image-hero-size: var(--img-hero-size-small);
     }
   }
-
 }
 
 /*Tablet*/
@@ -304,7 +303,6 @@ a
       --image-hero-size: var(--img-hero-size-medium);
     }
   }
-
 }
 
 /*Desktop*/
@@ -359,9 +357,7 @@ a
   grid-row: span 5;
   border: 1px solid var(--clr-neutral-200);
   box-shadow: var(--border-shadow);
-
   justify-items: stretch;
-
   gap: 1rem;
 
   >*:not(img)
@@ -390,19 +386,6 @@ a
   flex-wrap: wrap;
   /* gap: calc(var(--spacing-base)*0.25); */
 
-}
-
-.selector
-{
-  text-transform: uppercase;
-  font-size: x-small;
-  font-weight: bold;
-  padding-inline: calc(var(--spacing-base)*0.75);
-  padding-block: calc(var(--spacing-base)*0.2);
-  margin-inline: calc(var(--spacing-base)*0.1);
-  border-radius: 25px;
-  color: var(--clr-neutral-100);
-  background-color: var(--clr-primary);
 }
 
 .cardUser
@@ -467,14 +450,6 @@ a
 
 }
 
-body
-{
-  font-family: var(--font-base);
-  background-color: var(--clr-accent-light-1);
-  color: var(--clr-primary-dark);
-
-}
-
 header
 {
   background-color: var(--clr-neutral-100);
@@ -507,16 +482,36 @@ header
   {
     display: flex;
     justify-content: space-between;
+
   }
 }
 
+.headerMenuLink
+{
+  padding: 14px 10px;
 
+  &:hover
+  {
+    color: var(--clr-neutral-100);
+    background-color: var(--clr-accent);
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
 
 .headerLogo
 {
   /*Sätter färgen som svg använder i fill="currencolor"*/
   color: var(--clr-accent);
   display: flex;
+}
+
+body
+{
+  font-family: var(--font-base);
+  background-color: var(--clr-accent-light-1);
+  color: var(--clr-primary-dark);
+
 }
 
 main
@@ -533,7 +528,6 @@ main
     background-color: var(--clr-green-100);
 
   }
-
 }
 
 .hero
@@ -854,6 +848,19 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
 }
 
 /*Lägger Selectors så de inte ligger i vägen under utvecklingen.*/
+
+.selector
+{
+  text-transform: uppercase;
+  font-size: x-small;
+  font-weight: bold;
+  padding-inline: calc(var(--spacing-base)*0.75);
+  padding-block: calc(var(--spacing-base)*0.2);
+  margin-inline: calc(var(--spacing-base)*0.1);
+  border-radius: 25px;
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-primary);
+}
 
 .selectorFlower
 {
