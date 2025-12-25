@@ -367,6 +367,8 @@ a
   gap: 1rem;
   cursor: pointer;
   color: inherit;
+  background-color: var(--clr-neutral-100);
+  ;
 
   >*:not(img)
   {
@@ -620,7 +622,6 @@ för att placera ut bilderna enligt mall.
   :nth-child(3)
   {
     grid-area: imgThree;
-
   }
 
   :nth-child(4)
