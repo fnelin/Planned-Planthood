@@ -355,8 +355,9 @@ a
 
   border: 1px solid var(--clr-neutral-200);
   box-shadow: var(--border-shadow);
-
   justify-items: stretch;
+
+  gap: 1rem;
 
   >*:not(img)
   {
@@ -380,7 +381,7 @@ a
 {
   display: flex;
   flex-wrap: wrap;
-  gap: calc(var(--spacing-base)*0.5);
+  /* gap: calc(var(--spacing-base)*0.25); */
 
 }
 
@@ -389,8 +390,9 @@ a
   text-transform: uppercase;
   font-size: x-small;
   font-weight: bold;
-  padding-inline: 1ch;
-  padding-block: 0.5ch;
+  padding-inline: calc(var(--spacing-base)*0.75);
+  padding-block: calc(var(--spacing-base)*0.2);
+  margin-inline: calc(var(--spacing-base)*0.1);
   border-radius: 25px;
   color: var(--clr-neutral-100);
   background-color: var(--clr-primary);
@@ -428,8 +430,6 @@ a
     {
       transform: scale(1.2);
     }
-
-
   }
 }
 
