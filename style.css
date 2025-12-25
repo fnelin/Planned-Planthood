@@ -414,8 +414,22 @@ a
 
   >img
   {
+
     /*Tvingades zooma in på default bilden på avatarer för att "kroppen" inte ska se avhuggen ut*/
-    transform: scale(1.2);
+    /*Hack, justerade zoom och "puttade ned" bilden på mindre skärmar för att uppnå liknande effekt som
+    på desktop*/
+    @media (max-width:1023px)
+    {
+      padding-top: 1rem;
+      transform: scale(1.5);
+    }
+
+    @media(min-width:1024px)
+    {
+      transform: scale(1.2);
+    }
+
+
   }
 }
 
