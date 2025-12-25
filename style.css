@@ -164,16 +164,43 @@ button
   --input-padding: 1.25rem;
   --input-radius: 25px;
 
-  /*FUNKAR INTE :( Gränsvärden till mediaqueries*/
-  --desktop-w-max: 100px;
-  --desktop-w-min: 1024px;
-  --tablet-w-max: 1023px;
-  --tablet-w-min: 768px;
-  --mobile-w-max: 767px;
-  --mobile-w-min: 320px;
-
   /*Mjuka upp övergångarna när man ändrar upplösningen*/
-  --transition-base: all 200ms ease-in-out;
+  --transition-base: all 300ms ease-out;
+
+  /*Storlekar på container som sätts i mediaqueries*/
+  --container-width-mobile: 320px;
+  --container-width-tablet: 640px;
+  --container-width-desktop: 1024px;
+  --container-margin: auto;
+  --container-transition: var(--transition-base);
+
+  /*Variabler till herobilden samlade på ett ställe för att sättas i mediaqueries*/
+  --border-hero-small: calc(var(--border-hero-medium)*0.75);
+  --border-hero-medium: 12px;
+  --border-hero-large: calc(var(--border-hero-medium)*2);
+
+  --img-hero-size-small: 120px;
+  --img-hero-size-medium: 240px;
+  --img-hero-size-large: unset;
+
+  --img-hero-columns-small: repeat(2, 1fr);
+  --img-hero-columns-medium: repeat(3, 1fr);
+  --img-hero-columns-large: repeat(6, 1fr);
+
+  --img-hero-rows-small: repeat(3, 1fr);
+  --img-hero-rows-medium: repeat(2, 1fr);
+  --img-hero-rows-large: repeat(2, 1fr);
+
+  --img-hero-area-small:
+    'imgOne imgTwo'
+    'imgThree imgFour'
+    'imgFive imgSix';
+  --img-hero-area-medium:
+    'imgOne imgTwo imgThree'
+    'imgFour imgFive imgSix';
+  --img-hero-area-large:
+    'imgOne imgOne imgTwo imgThree imgFour imgFour'
+    'imgOne imgOne imgFive imgFive imgSix imgSix';
 }
 
 /*** Global/base ***/
@@ -217,9 +244,7 @@ a
 {
   .container
   {
-    width: 320px;
-    margin: auto;
-    transition: var(--transition-base);
+    --container-width: var(--container-width-mobile);
   }
 
   h1,
@@ -235,21 +260,14 @@ a
 
   .heroBanner
   {
-    border: 8px solid var(--clr-neutral-100);
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-areas:
-      'imgOne imgTwo'
-      'imgThree imgFour'
-      'imgFive imgSix';
+    --border-hero: var(--border-hero-small);
+    --img-hero-columns: var(--img-hero-columns-small);
+    --img-hero-rows: var(--img-hero-rows-small);
+    --img-hero-area: var(--img-hero-area-small);
 
-    img
+    >img
     {
-      width: 120px;
-      height: 120px;
-      overflow: hidden;
-      /*La till nedan för att bilderna inte ska se skeva ut när gridcellerna ändras och bilderna placeras annorlunda jämfört med desktop och orginal-apect-ratio*/
-      object-fit: cover;
+      --image-hero-size: var(--img-hero-size-small);
     }
   }
 
@@ -260,9 +278,7 @@ a
 {
   .container
   {
-    width: 640px;
-    margin: auto;
-    transition: var(--transition-base);
+    --container-width: var(--container-width-tablet);
   }
 
   h1,
@@ -278,19 +294,14 @@ a
 
   .heroBanner
   {
-    border: 12px solid var(--clr-neutral-100);
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas:
-      'imgOne imgTwo imgThree'
-      'imgFour imgFive imgSix';
+    --border-hero: var(--border-hero-medium);
+    --img-hero-columns: var(--img-hero-columns-medium);
+    --img-hero-rows: var(--img-hero-rows-medium);
+    --img-hero-area: var(--img-hero-area-medium);
 
     img
     {
-      width: 240px;
-      height: 240px;
-      overflow: hidden;
-      object-fit: cover;
+      --image-hero-size: var(--img-hero-size-medium);
     }
   }
 
@@ -301,8 +312,7 @@ a
 {
   .container
   {
-    width: 1024px;
-    transition: var(--transition-base);
+    --container-width: var(--container-width-desktop);
   }
 
   h1,
@@ -318,19 +328,15 @@ a
 
   .heroBanner
   {
-    border: 24px solid var(--clr-neutral-100);
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas:
-      'imgOne imgOne imgTwo imgThree imgFour imgFour'
-      'imgOne imgOne imgFive imgFive imgSix imgSix';
+    --border-hero: var(--border-hero-large);
+    --img-hero-columns: var(--img-hero-columns-large);
+    --img-hero-rows: var(--img-hero-rows-large);
+    --img-hero-area: var(--img-hero-area-large);
+    grid-template-areas: ;
 
     img
     {
-      /*Unset på dimensionerna behövs då värdet annars kommer ifrån tidigare mediaquery*/
-      width: unset;
-      height: unset;
-      object-fit: cover;
+      --image-hero-size: var(--img-hero-size-large);
     }
   }
 }
@@ -454,6 +460,14 @@ a
   padding-block: var(--spacing-base);
 }
 
+.container
+{
+  width: var(--container-width);
+  margin: var(--container-margin);
+  transition: var(--container-transition);
+
+}
+
 body
 {
   font-family: var(--font-base);
@@ -542,16 +556,29 @@ för att placera ut bilderna enligt mall.
 */
 .heroBanner
 {
+  border: var(--border-hero) solid var(--clr-neutral-100);
   box-shadow: var(--border-shadow);
   display: grid;
+  grid-template-columns: var(--img-hero-columns);
+  grid-template-rows: var(--img-hero-rows);
+  grid-template-areas: var(--img-hero-area);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 
+  >img
+  {
+    width: var(--image-hero-size);
+    height: var(--image-hero-size);
+    /*La till nedan för att bilderna inte ska se skeva ut när gridcellerna ändras och bilderna placeras annorlunda jämfört med desktop och orginal-apect-ratio*/
+    object-fit: cover;
+    overflow: hidden;
+  }
+
   /*
-Istället för att sätta klasser på de enskilda bildelementen fånger jag upp
-dem med nth-child väljare. För att automagiskt passas in i grid arean beroende
-skärmupplösningen
-*/
+  Istället för att sätta klasser på de enskilda bildelementen fånger jag upp
+  dem med nth-child väljare. För att automagiskt passas in i grid arean beroende
+  skärmupplösningen
+  */
   :first-child
   {
     grid-area: imgOne;
