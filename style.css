@@ -905,7 +905,7 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
   text-transform: uppercase;
   font-size: x-small;
   font-weight: bold;
-  padding-inline: calc(var(--spacing-base)*0.75);
+  padding-inline: calc(var(--spacing-base)*0.5);
   padding-block: calc(var(--spacing-base)*0.2);
   margin-inline: calc(var(--spacing-base)*0.1);
   border-radius: 25px;
