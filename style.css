@@ -164,8 +164,13 @@ button
   --input-padding: 1.25rem;
   --input-radius: 25px;
 
-  /*Mjuka upp övergångarna när man ändrar upplösningen*/
-  --transition-base: all 300ms ease-out;
+  /*Mjuka upp övergångarna när man ändrar upplösningen
+  (överarbetade för egen tydlighet)/
+  --transition-element: all;
+  --transition-time: 300ms;
+  --transition-effect: linear;
+  --transition-base: var(--transition-element) var(--transition-time) var(--transition-effect);
+
 
   /*Storlekar på container som sätts i mediaqueries*/
   --container-width-mobile: 320px;
@@ -360,6 +365,8 @@ a
   box-shadow: var(--border-shadow);
   justify-items: stretch;
   gap: 1rem;
+  cursor: pointer;
+  color: inherit;
 
   >*:not(img)
   {
@@ -370,6 +377,23 @@ a
   {
     font-size: var(--fs-300);
   }
+
+  /*Osäker på hur hover effekten för kort länkarna skulle se ut så gjorde liknannde
+    som på pannkakorna*/
+  &:hover,
+  &:focus
+  {
+    text-decoration: none;
+
+    >h3
+    {
+
+      text-decoration: underline;
+      text-decoration-color: var(--clr-accent);
+      text-decoration-thickness: 5px;
+    }
+  }
+
 }
 
 .cardImage
@@ -871,10 +895,10 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
   opacity: 25%;
   align-self: center;
   justify-self: center;
+  max-width: 100%;
 }
 
-/*Lägger Selectors så de inte ligger i vägen under utvecklingen.*/
-
+/*Lägger Selectors sist så de inte ligger i vägen under utvecklingen.*/
 .selector
 {
   text-transform: uppercase;
