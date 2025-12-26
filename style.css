@@ -373,7 +373,7 @@ a
   cursor: pointer;
   color: inherit;
   background-color: var(--clr-neutral-100);
-  
+
 
   >*:not(img)
   {
@@ -741,9 +741,15 @@ input
 
 .greenRound
 {
-  padding: max(10%, 3rem);
+  max-width: 400px;
+  padding: max(10%, 5rem);
   background: var(--clr-green-400);
   border-radius: 100%;
+
+  >img
+  {
+    width: 100%
+  }
 }
 
 .hideWhenMobile
