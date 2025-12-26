@@ -373,7 +373,7 @@ a
   cursor: pointer;
   color: inherit;
   background-color: var(--clr-neutral-100);
-  ;
+  
 
   >*:not(img)
   {
@@ -391,6 +391,10 @@ a
   &:focus
   {
     text-decoration: none;
+    /*outline istället för border då border påverkade layouten och puttade på andra kort.*/
+    outline: 2px solid hsl(from var(--clr-accent) h s l / 50%);
+    background-color: hsl(from var(--clr-accent) h s l / 10%);
+    transition: var(--transition-base);
 
     >h3
     {
@@ -398,6 +402,7 @@ a
       text-decoration: underline;
       text-decoration-color: var(--clr-accent);
       text-decoration-thickness: 5px;
+      transition: inherit;
     }
   }
 
