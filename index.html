@@ -4,8 +4,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta author="Fredrik.N">
-        <meta description="Lexicon front-end development excersize">
+        <meta name="author" content="Fredrik.N">
+        <meta name="description" content="Lexicon front-end development excersize">
         <title>Planned Planthood</title>
         <link rel="icon" type="image/svg+xml" href="./assets/images/logo.svg" />
         <link rel="stylesheet" href="./style.css">
@@ -79,10 +79,10 @@
                 <section class="information container" aria-label="Nyhetsbrev">
                     <form class="informationForm" action="post">
                         <Label for="email">
-                            <h2>Anmäl dig till vårt nyhetsbrev så du inte missar en utsådd!</h2>
+                            <h2 aria-hidden="true">Anmäl dig till vårt nyhetsbrev så du inte missar en utsådd!</h2>
                         </Label>
                         <div class="wrapInputs">
-                            <input type="email" id="email" placeholder="namn@domän.se">
+                            <input type="email" id="email" placeholder="namn@domän.se" autocomplete="email">
                             <button type="submit" class="greenButton">Skicka</button>
                         </div>
                     </form>
