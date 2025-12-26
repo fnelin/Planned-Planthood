@@ -908,7 +908,8 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
   opacity: 25%;
   align-self: center;
   justify-self: center;
-  max-width: 100%;
+  width: 60%;
+  height: auto;
 }
 
 /*Lägger Selectors sist så de inte ligger i vägen under utvecklingen.*/
