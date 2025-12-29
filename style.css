@@ -54,7 +54,6 @@ li,
 figcaption
 {
   text-wrap: pretty;
-  /* max-width: 55ch; */
 }
 
 /* for container queries, landmarks as containers */
@@ -261,6 +260,7 @@ a
   .container
   {
     --container-width: var(--container-width-mobile);
+    font-size: var(--fs-500);
   }
 
   h1,
@@ -382,11 +382,6 @@ a
   >*:not(img)
   {
     margin-inline: var(--spacing-base);
-  }
-
-  >p
-  {
-    font-size: var(--fs-300);
   }
 
   /*Osäker på hur hover effekten för kort länkarna skulle se ut så gjorde liknannde
@@ -661,11 +656,9 @@ main
 
 .heroIngress
 {
-  /*Max väljer mellan Display och Tablet medans 80% ska komma in vid mobile*/
-  /* width: min(max(55%, 70ch), 80%); var osäker på om clamp skulle fungera så låter denna ligga kvar för påminnelse*/
   width: min(70ch, 100%);
   padding: min(2.5%, 2ch);
-  font-size: var(--fs-400);
+
   text-align: center;
   justify-self: center;
 }
@@ -680,6 +673,7 @@ main
   @media(max-width: 40rem)
   {
     flex-direction: column;
+    text-align: center;
 
     &:has(form)
     {
@@ -782,21 +776,26 @@ input
 .history
 {
   width: 40%;
+  display: grid;
+  gap: calc(var(--spacing-base)*2);
 
   @media (max-width:40rem)
   {
     width: 100%;
   }
 
-  display: grid;
-  gap: calc(var(--spacing-base)*2);
-  font-size: var(--fs-300);
 
-  .greenButton
+  >.greenButton
   {
     justify-self: end;
     text-align: center;
     width: 22ch;
+
+    @media(width<40rem)
+    {
+      justify-self: center;
+
+    }
   }
 }
 
@@ -942,6 +941,11 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
   border-radius: var(--fs-600);
   color: var(--clr-neutral-100);
   background-color: var(--clr-primary);
+
+  @media(width<40rem)
+  {
+    font-size: var(--fs-200);
+  }
 }
 
 .selectorFlower
