@@ -506,7 +506,6 @@ a
   /*mycket märkliga effekter uppstod sub 320px om inte overflow doldes.*/
   overflow: hidden;
   transition: var(--transition-base);
-  padding-inline: min(2.5%, 2rem);
 
   >*
   {
