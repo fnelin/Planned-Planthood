@@ -23,7 +23,7 @@ html {
   color-scheme: dark light;
 } */
 
-min body height body
+body
 {
   min-height: 100vh;
 }
@@ -146,7 +146,7 @@ button
 
   /* Font weights assignments */
   --fw-regular: var(--fw-400);
-  --fw-medium: var(--fw-500);
+  --fw-tablet: var(--fw-500);
   --fw-semi-bold: var(--fw-600);
   --fw-bold: var(--fw-700);
   --fw-x-bold: var(--fw-900);
@@ -183,14 +183,14 @@ button
   --container-transition: var(--transition-base);
 
   /*Variabler till herobilden samlade på ett ställe för att sättas i mediaqueries*/
-  --hero-border-small: calc(var(--hero-border-medium)*0.75);
-  --hero-border-medium: 12px;
-  --hero-border-large: calc(var(--hero-border-medium)*2);
+  --hero-border-mobile: calc(var(--hero-border-tablet)*0.75);
+  --hero-border-tablet: 12px;
+  --hero-border-desktop: calc(var(--hero-border-tablet)*2);
 
-  --hero-img-size-small: 150px;
-  --hero-img-size-medium: 235px;
-  /*Testade för att se om det fungerade att beräkna bildernas storlek baserad på definerad container. --hero-img-size-medium: calc(var(--container-width-tablet)/3); */
-  --hero-img-size-large: unset;
+  --hero-img-size-mobile: 151px;
+  --hero-img-size-tablet: 235px;
+  /*Testade för att se om det fungerade att beräkna bildernas storlek baserad på definerad container. --hero-img-size-tablet: calc(var(--container-width-tablet)/3); */
+  --hero-img-size-desktop: unset;
 
   /*
 Använde https: //cssgrid-generator.netlify.app/ för att designa grid
@@ -198,22 +198,22 @@ Och instruktioner ifrån https: //www.w3schools.com/css/css_grid_item_name.asp
 för att placera ut bilderna enligt mall.
 */
 
-  --hero-img-columns-small: repeat(2, 1fr);
-  --hero-img-columns-medium: repeat(3, 1fr);
-  --hero-img-columns-large: repeat(6, 1fr);
+  --hero-img-columns-mobile: repeat(2, 1fr);
+  --hero-img-columns-tablet: repeat(3, 1fr);
+  --hero-img-columns-desktop: repeat(6, 1fr);
 
-  --hero-img-rows-small: repeat(3, 1fr);
-  --hero-img-rows-medium: repeat(2, 1fr);
-  --hero-img-rows-large: repeat(2, 1fr);
+  --hero-img-rows-mobile: repeat(3, 1fr);
+  --hero-img-rows-tablet: repeat(2, 1fr);
+  --hero-img-rows-desktop: repeat(2, 1fr);
 
-  --hero-img-gridarea-small:
+  --hero-img-gridarea-mobile:
     'imgOne imgTwo'
     'imgThree imgFour'
     'imgFive imgSix';
-  --hero-img-gridarea-medium:
+  --hero-img-gridarea-tablet:
     'imgOne imgTwo imgThree'
     'imgFour imgFive imgSix';
-  --hero-img-gridarea-large:
+  --hero-img-gridarea-desktop:
     'imgOne imgOne imgTwo imgThree imgFour imgFour'
     'imgOne imgOne imgFive imgFive imgSix imgSix';
 }
@@ -255,7 +255,7 @@ a
 /* Generella formateringsregler för de tre olika responsive designerna*/
 
 /*Mobil*/
-@media(max-width: 48rem)
+@media(max-width: 40rem)
 {
   .container
   {
@@ -275,20 +275,20 @@ a
 
   .heroBanner
   {
-    --border-hero: var(--hero-border-small);
-    --hero-img-columns: var(--hero-img-columns-small);
-    --hero-img-rows: var(--hero-img-rows-small);
-    --hero-img-gridarea-: var(--hero-img-gridarea-small);
+    --border-hero: var(--hero-border-mobile);
+    --hero-img-columns: var(--hero-img-columns-mobile);
+    --hero-img-rows: var(--hero-img-rows-mobile);
+    --hero-img-gridarea: var(--hero-img-gridarea-mobile);
 
     >img
     {
-      --image-hero-size: var(--hero-img-size-small);
+      --image-hero-size: var(--hero-img-size-mobile);
     }
   }
 }
 
 /*Tablet*/
-@media(min-width:48rem)
+@media(min-width:40rem)
 {
   .container
   {
@@ -308,14 +308,14 @@ a
 
   .heroBanner
   {
-    --border-hero: var(--hero-border-medium);
-    --hero-img-columns: var(--hero-img-columns-medium);
-    --hero-img-rows: var(--hero-img-rows-medium);
-    --hero-img-gridarea-: var(--hero-img-gridarea-medium);
+    --border-hero: var(--hero-border-tablet);
+    --hero-img-columns: var(--hero-img-columns-tablet);
+    --hero-img-rows: var(--hero-img-rows-tablet);
+    --hero-img-gridarea: var(--hero-img-gridarea-tablet);
 
     img
     {
-      --image-hero-size: var(--hero-img-size-medium);
+      --image-hero-size: var(--hero-img-size-tablet);
     }
   }
 }
@@ -341,14 +341,14 @@ a
 
   .heroBanner
   {
-    --border-hero: var(--hero-border-large);
-    --hero-img-columns: var(--hero-img-columns-large);
-    --hero-img-rows: var(--hero-img-rows-large);
-    --hero-img-gridarea-: var(--hero-img-gridarea-large);
+    --border-hero: var(--hero-border-desktop);
+    --hero-img-columns: var(--hero-img-columns-desktop);
+    --hero-img-rows: var(--hero-img-rows-desktop);
+    --hero-img-gridarea: var(--hero-img-gridarea-desktop);
 
     img
     {
-      --image-hero-size: var(--hero-img-size-large);
+      --image-hero-size: var(--hero-img-size-desktop);
     }
   }
 }
@@ -449,7 +449,7 @@ a
     /*Tvingades zooma in på default bilden på avatarer för att "kroppen" inte ska se avhuggen ut*/
     /*Hack, justerade zoom och "puttade ned" bilden på mindre skärmar för att uppnå liknande effekt som
     på desktop*/
-    @media (max-width:48rem)
+    @media (max-width:40rem)
     {
       padding-top: 1rem;
       transform: scale(1.5);
@@ -505,6 +505,7 @@ a
   /*mycket märkliga effekter uppstod sub 320px om inte overflow doldes.*/
   overflow: hidden;
   transition: var(--transition-base);
+  padding-inline: min(2.5%, 2rem);
 
   >*
   {
@@ -527,7 +528,7 @@ header
 
 .headerMenu
 {
-  @media(min-width:48rem)
+  @media(min-width:40rem)
   {
     width: 50%;
   }
@@ -609,7 +610,7 @@ main
   display: grid;
   grid-template-columns: var(--hero-img-columns);
   grid-template-rows: var(--hero-img-rows);
-  grid-template-areas: var(--hero-img-gridarea-);
+  grid-template-areas: var(--hero-img-gridarea);
   gap: 0;
   justify-items: stretch;
 
@@ -658,7 +659,16 @@ main
   }
 }
 
-
+.heroIngress
+{
+  /*Max väljer mellan Display och Tablet medans 80% ska komma in vid mobile*/
+  /* width: min(max(55%, 70ch), 80%); var osäker på om clamp skulle fungera så låter denna ligga kvar för påminnelse*/
+  width: min(70ch, 100%);
+  padding: min(2.5%, 2ch);
+  font-size: var(--fs-400);
+  text-align: center;
+  justify-self: center;
+}
 
 .information
 {
@@ -667,7 +677,7 @@ main
   align-items: center;
   gap: 2rem;
 
-  @media(max-width: 48rem)
+  @media(max-width: 40rem)
   {
     flex-direction: column;
 
@@ -686,7 +696,7 @@ main
   REFACTOR - Inte nöjd med att baka in media queries för att få formulärets
   flexbox att bli större när upplösningen blir mindre.
   */
-  @media(min-width:48rem)
+  @media(min-width:40rem)
   {
     width: 50%;
   }
@@ -700,16 +710,6 @@ main
   gap: calc(var(--spacing-base)*2);
 }
 
-.ingress
-{
-  /*Max väljer mellan Display och Tablet medans 80% ska komma in vid mobile*/
-  /* width: min(max(55%, 70ch), 80%); var osäker på om clamp skulle fungera så låter denna ligga kvar för påminnelse*/
-  width: min(70ch, 100%);
-  padding: min(2.5%, 2ch);
-  font-size: var(--fs-400);
-  text-align: center;
-  justify-self: center;
-}
 
 input
 {
@@ -724,7 +724,7 @@ input
   }
 }
 
-.wrapInputs
+.informationWrapInputs
 {
   display: flex;
   justify-content: space-between;
@@ -773,7 +773,7 @@ input
   display: none;
 
 
-  @media(min-width:48rem)
+  @media(min-width:40rem)
   {
     display: inline;
   }
@@ -783,7 +783,7 @@ input
 {
   width: 40%;
 
-  @media (max-width:calc(48rem-1px))
+  @media (max-width:40rem)
   {
     width: 100%;
   }
@@ -934,7 +934,7 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
 .selector
 {
   text-transform: uppercase;
-  font-size: x-small;
+  font-size: x-mobile;
   font-weight: bold;
   padding-inline: calc(var(--spacing-base)*0.5);
   padding-block: calc(var(--spacing-base)*0.2);
