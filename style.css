@@ -120,6 +120,7 @@ button
   /* Font sizes definitions */
   --fs-100: 0.625rem;
   --fs-200: 0.75rem;
+  --fs-300: 0.875rem;
   --fs-400: 1rem;
   --fs-500: 1.25rem;
   --fs-600: 1.5rem;
@@ -790,7 +791,7 @@ input
 
   display: grid;
   gap: calc(var(--spacing-base)*2);
-  font-size: small;
+  font-size: var(--fs-300);
 
   .greenButton
   {
@@ -934,7 +935,7 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
 .selector
 {
   text-transform: uppercase;
-  font-size: x-mobile;
+  font-size: var(--fs-100);
   font-weight: bold;
   padding-inline: calc(var(--spacing-base)*0.5);
   padding-block: calc(var(--spacing-base)*0.2);
