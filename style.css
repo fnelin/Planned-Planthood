@@ -162,7 +162,7 @@ button
 
   /*Formulärens input*/
   --input-padding: 1.25rem;
-  --input-radius: 25px;
+  --input-radius: 1.5rem;
 
   /*Mjuka upp övergångarna när man ändrar upplösningen
   (överarbetade för egen tydlighet)*/
@@ -173,9 +173,12 @@ button
 
 
   /*Storlekar på container som sätts i mediaqueries*/
-  --container-width-mobile: 320px;
-  --container-width-tablet: 640px;
-  --container-width-desktop: 1024px;
+  /* 320px std */
+  --container-width-mobile: 20rem;
+  /* 640px std*/
+  --container-width-tablet: 40rem;
+  /* 1024px std*/
+  --container-width-desktop: 64rem;
   --container-margin: auto;
   --container-transition: var(--transition-base);
 
@@ -184,8 +187,9 @@ button
   --hero-border-medium: 12px;
   --hero-border-large: calc(var(--hero-border-medium)*2);
 
-  --hero-img-size-small: 120px;
-  --hero-img-size-medium: 240px;
+  --hero-img-size-small: 150px;
+  --hero-img-size-medium: 235px;
+  /*Testade för att se om det fungerade att beräkna bildernas storlek baserad på definerad container. --hero-img-size-medium: calc(var(--container-width-tablet)/3); */
   --hero-img-size-large: unset;
 
   /*
@@ -251,7 +255,7 @@ a
 /* Generella formateringsregler för de tre olika responsive designerna*/
 
 /*Mobil*/
-@media(max-width:767px)
+@media(max-width: 48rem)
 {
   .container
   {
@@ -261,7 +265,7 @@ a
   h1,
   h2
   {
-    font-size: var(--fs-500);
+    font-size: var(--fs-600);
   }
 
   .headerMobileMenu>*
@@ -284,7 +288,7 @@ a
 }
 
 /*Tablet*/
-@media(min-width:768px)
+@media(min-width:48rem)
 {
   .container
   {
@@ -317,7 +321,7 @@ a
 }
 
 /*Desktop*/
-@media(min-width:1024px)
+@media(min-width:64rem)
 {
   .container
   {
@@ -353,7 +357,7 @@ a
 {
   display: grid;
   /*Magic formula from mr Powell*/
-  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(12.5rem, 100%), 1fr));
   gap: calc(var(--spacing-base)*0.5);
 }
 
@@ -369,11 +373,10 @@ a
   border: 1px solid var(--clr-neutral-200);
   box-shadow: var(--border-shadow);
   justify-items: stretch;
-  gap: 1rem;
+  gap: var(--spacing-base);
   cursor: pointer;
   color: inherit;
   background-color: var(--clr-neutral-100);
-
 
   >*:not(img)
   {
@@ -436,7 +439,7 @@ a
 {
   background-color: var(--clr-neutral-200);
   border-radius: 100%;
-  border: .15rem solid var(--clr-neutral-900);
+  border: 0.15rem solid var(--clr-neutral-900);
   aspect-ratio: 1/1;
   overflow: hidden;
 
@@ -446,13 +449,18 @@ a
     /*Tvingades zooma in på default bilden på avatarer för att "kroppen" inte ska se avhuggen ut*/
     /*Hack, justerade zoom och "puttade ned" bilden på mindre skärmar för att uppnå liknande effekt som
     på desktop*/
-    @media (max-width:1023px)
+    @media (max-width:48rem)
     {
       padding-top: 1rem;
       transform: scale(1.5);
     }
 
-    @media(min-width:1024px)
+    @media (max-width:64rem)
+    {
+      transform: scale(1.4);
+    }
+
+    @media(min-width:64rem)
     {
       transform: scale(1.2);
     }
@@ -478,11 +486,30 @@ a
   padding-block: var(--spacing-base);
 }
 
-.container
+/* .container
 {
   width: var(--container-width);
   margin: var(--container-margin);
   transition: var(--container-transition);
+}
+ */
+
+/*
+ Ändrade lite för att få bort en nivå av div taggar men ändå ha background-color bleed
+  (https: //www.youtube.com/watch?v=6l24PIccgqU)
+  */
+.container
+{
+  display: grid;
+  grid-template-columns: 1fr var(--container-width) 1fr;
+  /*mycket märkliga effekter uppstod sub 320px om inte overflow doldes.*/
+  overflow: hidden;
+  transition: var(--transition-base);
+
+  >*
+  {
+    grid-column: 2;
+  }
 
 }
 
@@ -500,12 +527,12 @@ header
 
 .headerMenu
 {
-  @media(min-width:768px)
+  @media(min-width:48rem)
   {
     width: 50%;
   }
 
-  @media(min-width:1024px)
+  @media(min-width:64rem)
   {
     width: 35%;
   }
@@ -523,7 +550,7 @@ header
 
 .headerMenuLink
 {
-  padding: 14px 10px;
+  padding: var(--fs-200) var(--fs-100);
   transition: 350ms;
 
 }
@@ -555,14 +582,13 @@ header
 body
 {
   font-family: var(--font-base);
-  background-color: var(--clr-accent-light-1);
   color: var(--clr-primary-dark);
 
 }
 
 main
 {
-  >div
+  >*
   {
     padding-block: calc(var(--spacing-base)*2);
   }
@@ -576,19 +602,6 @@ main
   }
 }
 
-.hero
-{
-  display: grid;
-  justify-items: center;
-
-  p
-  {
-    text-align: center;
-  }
-
-}
-
-
 .heroBanner
 {
   border: var(--border-hero) solid var(--clr-neutral-100);
@@ -597,8 +610,8 @@ main
   grid-template-columns: var(--hero-img-columns);
   grid-template-rows: var(--hero-img-rows);
   grid-template-areas: var(--hero-img-gridarea-);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  gap: 0;
+  justify-items: stretch;
 
   >img
   {
@@ -650,11 +663,11 @@ main
 .information
 {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   gap: 2rem;
 
-  @media(max-width: 768px)
+  @media(max-width: 48rem)
   {
     flex-direction: column;
 
@@ -671,16 +684,16 @@ main
 
   /*
   REFACTOR - Inte nöjd med att baka in media queries för att få formulärets
-  flexbox att bli större när skärmen blir mindre.
+  flexbox att bli större när upplösningen blir mindre.
   */
-  @media(min-width:768px)
+  @media(min-width:48rem)
   {
     width: 50%;
   }
 
-  @media(min-width:1024px)
+  @media(min-width:64rem)
   {
-    width: 30%;
+    width: 30%
   }
 
   display: grid;
@@ -691,9 +704,11 @@ main
 {
   /*Max väljer mellan Display och Tablet medans 80% ska komma in vid mobile*/
   /* width: min(max(55%, 70ch), 80%); var osäker på om clamp skulle fungera så låter denna ligga kvar för påminnelse*/
-  width: clamp(55%, 70ch, 80%);
-  padding-block: 1rem;
-  font-size: var(--fs-200);
+  width: min(70ch, 100%);
+  padding: min(2.5%, 2ch);
+  font-size: var(--fs-400);
+  text-align: center;
+  justify-self: center;
 }
 
 input
@@ -740,25 +755,25 @@ input
 
 .greenRound
 {
-  max-width: 400px;
-  padding: max(10%, 5rem);
+  max-width: 100%;
+  padding: 4rem;
   background: var(--clr-green-400);
   border-radius: 100%;
 
   >img
   {
-    width: 100%
+    align-self: center;
+    justify-self: center;
+    max-width: 100%;
   }
 }
 
 .hideWhenMobile
 {
-  @media(max-width:767px)
-  {
-    display: none;
-  }
+  display: none;
 
-  @media(min-width:768px)
+
+  @media(min-width:48rem)
   {
     display: inline;
   }
@@ -768,7 +783,7 @@ input
 {
   width: 40%;
 
-  @media (max-width:767px)
+  @media (max-width:calc(48rem-1px))
   {
     width: 100%;
   }
@@ -787,9 +802,13 @@ input
 
 footer
 {
+  background: var(--clr-green-400);
+}
+
+.footerSelect
+{
   display: flex;
   justify-content: space-between;
-  background: var(--clr-green-400);
   padding: var(--spacing-base);
   color: var(--clr-neutral-100)
 }
@@ -920,7 +939,7 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
   padding-inline: calc(var(--spacing-base)*0.5);
   padding-block: calc(var(--spacing-base)*0.2);
   margin-inline: calc(var(--spacing-base)*0.1);
-  border-radius: 25px;
+  border-radius: var(--fs-600);
   color: var(--clr-neutral-100);
   background-color: var(--clr-primary);
 }

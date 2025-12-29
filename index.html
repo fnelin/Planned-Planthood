@@ -14,8 +14,8 @@
     </head>
 
     <body>
-        <header>
-            <section class="headerBar container">
+        <header class="container">
+            <section class="headerBar">
                 <a href="#" title="Hem" class="headerLogo" aria-hidden="true">
                     <svg width="35" height="50" viewBox="0 0 214 210" xmlns="http://www.w3.org/2000/svg" alt="">
                         <g fill="none" stroke="currentcolor" stroke-width="12">
@@ -56,27 +56,25 @@
         </header>
 
         <main>
-            <div>
-                <section class="hero container" aria-labelledby="headerH1">
-                    <h1 id="headerH1">Våra uppskattade växter</h1>
-                    <p class="ingress">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, ex vero
-                        harum
-                        recusandae et,
-                        nemo ea, non fugit
-                        sapiente sit dolore autem! Expedita illo deleniti maiores harum consequatur debitis hic.
-                    </p>
-                    <div class="heroBanner">
-                        <img src="https://picsum.photos/id/140/320/500" width="320" height="500" alt="">
-                        <img src="https://picsum.photos/id/360/160/250" width="160" height="250" alt="">
-                        <img src="https://picsum.photos/id/530/160/250" width="160" height="250" alt="">
-                        <img src="https://picsum.photos/id/55/320/250" width="320" height="500" alt="">
-                        <img src="https://picsum.photos/id/492/320/250" width="320" height="500" alt="">
-                        <img src="https://picsum.photos/id/70/320/250" width="320" height="500" alt="">
-                    </div>
-                </section>
-            </div>
-            <div>
-                <section class="information container" aria-label="Nyhetsbrev">
+            <section class="container" aria-labelledby="headerH1">
+                <h1 id="headerH1" class="center">Våra uppskattade växter</h1>
+                <p class="ingress">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, ex vero
+                    harum
+                    recusandae et,
+                    nemo ea, non fugit
+                    sapiente sit dolore autem! Expedita illo deleniti maiores harum consequatur debitis hic.
+                </p>
+                <div class="heroBanner">
+                    <img src="https://picsum.photos/id/140/320/500" width="320" height="500" alt="">
+                    <img src="https://picsum.photos/id/360/160/250" width="160" height="250" alt="">
+                    <img src="https://picsum.photos/id/530/160/250" width="160" height="250" alt="">
+                    <img src="https://picsum.photos/id/55/320/250" width="320" height="500" alt="">
+                    <img src="https://picsum.photos/id/492/320/250" width="320" height="500" alt="">
+                    <img src="https://picsum.photos/id/70/320/250" width="320" height="500" alt="">
+                </div>
+            </section>
+            <section class="container">
+                <div class="information" aria-label="Nyhetsbrev">
                     <form class="informationForm" action="post">
                         <Label for="email">
                             <h2 aria-hidden="true">Anmäl dig till vårt nyhetsbrev så du inte missar en utsådd!</h2>
@@ -89,302 +87,159 @@
                     <div class="greenRound">
                         <img src="./assets/images/icon-planting.svg" alt="">
                     </div>
-                </section>
-            </div>
-            <div>
-                <section class="container" aria-labelledby="allPlants">
+                </div>
+            </section>
+            <section class="container" aria-labelledby="allPlants">
 
-                    <h2 class="center" id="allPlants">Alla våra växter</h2>
-                    <div class="cardsGallery">
-                        <a href="#" class="card" title="Gurka">
-                            <img src="./assets/photos/card/cucumber.jpg" alt="" class="cardImage" width="240px"
-                                height="240px">
-                            <img src="./assets/images/icon-watermark.svg" alt="" class="watermark" width="200px"
-                                height="200px">
-                            <ul class="cardSelectors" role="list">
-                                <li><span class="selector selectorFlower">Blommor</span></li>
-                                <li><span class="selector selectorEdible">Ätbart</span></li>
-                                <li><span class="selector selectorGreen">Grönska</span></li>
-                            </ul>
-                            <h3>Gurka</h3>
-                            <p>Gurka växer snabbt, är enkel att odla och ger mängder med gurkor, bara man är noga med
-                                vattning, omplantering,duschning och gödsling.</p>
-                            <div class="cardUser">
-                                <div class="cardUserAvatar">
-                                    <img src="./assets/images/icon-avatar.svg" alt="" width="60px" height="60px">
-                                </div>
-                                <div class="cardUserDetails">
-                                    <span class="cardUserDetailsName">Coolio</span>
-                                    <span class="cardUserDetailsDate">2024-04-01</span>
-                                </div>
+                <h2 class="center" id="allPlants">Alla våra växter</h2>
+                <div class="cardsGallery">
+                    <article class="card" title="Gurka" aria-labelledby="article01">
+                        <img src="./assets/photos/card/cucumber.jpg" alt="" class="cardImage" width="240px"
+                            height="240px">
+                        <img src="./assets/images/icon-watermark.svg" alt="" class="watermark" width="200px"
+                            height="200px">
+                        <ul class="cardSelectors" role="list">
+                            <li><span class="selector selectorFlower">Blommor</span></li>
+                            <li><span class="selector selectorEdible">Ätbart</span></li>
+                            <li><span class="selector selectorGreen">Grönska</span></li>
+                        </ul>
+                        <h3 id="article01">Gurka</h3>
+                        <p>Gurka växer snabbt, är enkel att odla och ger mängder med gurkor, bara man är noga med
+                            vattning, omplantering, duschning och gödsling.</p>
+                        <div class="cardUser">
+                            <div class="cardUserAvatar">
+                                <img src="./assets/images/icon-avatar.svg" alt="" width="60px" height="60px">
                             </div>
-                        </a>
+                            <div class=" cardUserDetails">
+                                <span class="cardUserDetailsName">Coolio</span>
+                                <span class="cardUserDetailsDate">2024-04-01</span>
+                            </div>
+                        </div>
+                    </article>
 
-                        <a href="#" class="card" title="Tomat">
-                            <img src="./assets/photos/card/tomato.jpg" alt="" class="cardImage" width="240px"
-                                height="240px">
-                            <img src="./assets/images/icon-watermark.svg" alt="" class="watermark" width="200px"
-                                height="200px">
-                            <ul class="cardSelectors" role="list">
-                                <li><span class="selector selectorSunloving">Solälskande</span></li>
-                                <li><span class="selector selectorEasy">Lättodlat</span></li>
-                                <li><span class="selector selectorEdible">Ätbart</span></li>
-                            </ul>
-                            <h3>Tomat</h3>
-                            <p>En perfekt grönsak att odla på balkongen eller i trädgården. Ger riklig skörd under
-                                sommaren.</p>
-                            <div class="cardUser">
-                                <div class="cardUserAvatar">
-                                    <img src="./assets/images/icon-avatar.svg" alt="" width="60px" height="60px">
-                                </div>
-                                <div class=" cardUserDetails">
-                                    <span class="cardUserDetailsName">Anna Odlare</span>
-                                    <span class="cardUserDetailsDate">2024-12-05</span>
-                                </div>
-                            </div>
-                        </a>
 
-                        <a href="#" class="card" title="Pelargon">
-                            <img src="./assets/photos/card/pelargon.jpg" alt="" class="cardImage" width="240px"
-                                height="240px">
-                            <img src="./assets/images/icon-watermark.svg" alt="" class="watermark" width="200px"
-                                height="200px">
-                            <ul class="cardSelectors" role="list">
-                                <li><span class="selector selectorDecorative">Dekorativ</span></li>
-                                <li><span class="selector selectorColorful">Färgstark</span></li>
-                                <li><span class="selector selectorRobust">Tålig</span></li>
-                                <li><span class="selector selectorFlower">Blommor</span></li>
-                            </ul>
-                            <h3>Pelargon</h3>
-                            <p>En vacker och lättskött blomma som trivs både inne och ute under sommaren.</p>
-                            <div class="cardUser">
-                                <div class="cardUserAvatar">
-                                    <img src="./assets/images/icon-avatar.svg" alt="" width="60px" height="60px">
-                                </div>
-                                <div class="cardUserDetails">
-                                    <span class="cardUserDetailsName">Blomsterkalle</span>
-                                    <span class="cardUserDetailsDate">2024-12-03</span>
-                                </div>
+                    <article class="card" title="Tomat" aria-labelledby="article02">
+                        <img src="./assets/photos/card/tomato.jpg" alt="" class="cardImage" width="240px"
+                            height="240px">
+                        <img src="./assets/images/icon-watermark.svg" alt="" class="watermark" width="200px"
+                            height="200px">
+                        <ul class="cardSelectors" role="list">
+                            <li><span class="selector selectorSunloving">Solälskande</span></li>
+                            <li><span class="selector selectorEasy">Lättodlat</span></li>
+                            <li><span class="selector selectorEdible">Ätbart</span></li>
+                        </ul>
+                        <h3 id="article02">Tomat</h3>
+                        <p>En perfekt grönsak att odla på balkongen eller i trädgården. Ger riklig skörd under
+                            sommaren.</p>
+                        <div class="cardUser">
+                            <div class="cardUserAvatar">
+                                <img src="./assets/images/icon-avatar.svg" alt="" width="60px" height="60px">
                             </div>
-                        </a>
+                            <div class=" cardUserDetails">
+                                <span class="cardUserDetailsName">Anna Odlare</span>
+                                <span class="cardUserDetailsDate">2024-12-05</span>
+                            </div>
+                        </div>
+                    </article>
 
-                        <a href="#" class="card" title="Basilika">
-                            <img src="./assets/photos/card/basil.jpg" alt="" class="cardImage" width="240px"
-                                height="240px">
-                            <img src="./assets/images/icon-watermark.svg" alt="" class="watermark" width="200px"
-                                height="200px">
-                            <ul class="cardSelectors" role="list">
-                                <li><span class="selector selectorDecorative">Dekorativ</span></li>
-                                <li><span class="selector selectorColorful">Färgstark</span></li>
-                                <li><span class="selector selectorRobust">Tålig</span></li>
-                            </ul>
-                            <h3>Basilika</h3>
-                            <p>En fantastisk krydda för pastarätter och sallader. Trivs bäst i ett soligt fönster.</p>
-                            <div class="cardUser">
-                                <div class="cardUserAvatar">
-                                    <img src="./assets/images/icon-avatar.svg" alt="" width="60px" height="60px">
-                                </div>
-                                <div class="cardUserDetails">
-                                    <span class="cardUserDetailsName">Krydd-Malin</span>
-                                    <span class="cardUserDetailsDate">2024-12-07</span>
-                                </div>
+                    <article class="card" title="Pelargon" aria-labelledby="article03">
+                        <img src="./assets/photos/card/pelargon.jpg" alt="" class="cardImage" width="240px"
+                            height="240px">
+                        <img src="./assets/images/icon-watermark.svg" alt="" class="watermark" width="200px"
+                            height="200px">
+                        <ul class="cardSelectors" role="list">
+                            <li><span class="selector selectorDecorative">Dekorativ</span></li>
+                            <li><span class="selector selectorColorful">Färgstark</span></li>
+                            <li><span class="selector selectorRobust">Tålig</span></li>
+                            <li><span class="selector selectorFlower">Blommor</span></li>
+                        </ul>
+                        <h3 id="article03">Pelargon</h3>
+                        <p>En vacker och lättskött blomma som trivs både inne och ute under sommaren.</p>
+                        <div class="cardUser">
+                            <div class="cardUserAvatar">
+                                <img src="./assets/images/icon-avatar.svg" alt="" width="60px" height="60px">
                             </div>
-                        </a>
+                            <div class="cardUserDetails">
+                                <span class="cardUserDetailsName">Blomsterkalle</span>
+                                <span class="cardUserDetailsDate">2024-12-03</span>
+                            </div>
+                        </div>
+                    </article>
 
-                        <a href="#" class="card" title="Sallad">
-                            <img src="./assets/photos/card/sallad.png" alt="" class="cardImage" width="240px"
-                                height="240px">
-                            <img src="./assets/images/icon-watermark.svg" alt="" class="watermark" width="200px"
-                                height="200px">
-                            <ul class="cardSelectors" role="list">
-                                <li><span class="selector selectorFast">Snabbväxande</span></li>
-                                <li><span class="selector selectorEdible">Ätbart</span></li>
-                                <li><span class="selector selectorGreen">Grönska</span></li>
-                            </ul>
-                            <h3>Sallad</h3>
-                            <p>Sallad är en av de enklaste grönsakerna att odla och ger snabba resultat för färska
-                                måltider.</p>
-                            <div class="cardUser">
-                                <div class="cardUserAvatar">
-                                    <img src="./assets/images/icon-avatar.svg" alt="" width="60px" height="60px">
-                                </div>
-                                <div class="cardUserDetails">
-                                    <span class="cardUserDetailsName">Grönis</span>
-                                    <span class="cardUserDetailsDate">2024-12-06</span>
-                                </div>
+                    <article class="card" title="Basilika" aria-labelledby="article04">
+                        <img src="./assets/photos/card/basil.jpg" alt="" class="cardImage" width="240px" height="240px">
+                        <img src="./assets/images/icon-watermark.svg" alt="" class="watermark" width="200px"
+                            height="200px">
+                        <ul class="cardSelectors" role="list">
+                            <li><span class="selector selectorDecorative">Dekorativ</span></li>
+                            <li><span class="selector selectorColorful">Färgstark</span></li>
+                            <li><span class="selector selectorRobust">Tålig</span></li>
+                        </ul>
+                        <h3 id="article04">Basilika</h3>
+                        <p>En fantastisk krydda för pastarätter och sallader. Trivs bäst i ett soligt fönster.
+                        </p>
+                        <div class="cardUser">
+                            <div class="cardUserAvatar">
+                                <img src="./assets/images/icon-avatar.svg" alt="" width="60px" height="60px">
                             </div>
-                        </a>
+                            <div class="cardUserDetails">
+                                <span class="cardUserDetailsName">Krydd-Malin</span>
+                                <span class="cardUserDetailsDate">2024-12-07</span>
+                            </div>
+                        </div>
+                    </article>
 
-                        <a href="#" class="card" title="Ormbunke">
-                            <img src="./assets/photos/card/ormbunke.jpg" alt="" class="cardImage" width="240px"
-                                height="240px">
-                            <img src="./assets/images/icon-watermark.svg" alt="" class="watermark" width="200px"
-                                height="200px">
-                            <ul class="cardSelectors" role="list">
-                                <li><span class="selector selectorAir">Luftfuktande</span></li>
-                                <li><span class="selector selectorEdible">Grönska</span></li>
-                                <li><span class="selector selectorDecorative">Dekorativ</span></li>
-                            </ul>
-                            <h3>Ormbunke</h3>
-                            <p>En klassisk växt som passar perfekt i badrummet eller på skuggiga platser.</p>
-                            <div class="cardUser">
-                                <div class="cardUserAvatar">
-                                    <img src="./assets/images/icon-avatar.svg" alt="" width="60px" height="60px">
-                                </div>
-                                <div class="cardUserDetails">
-                                    <span class="cardUserDetailsName">Naturvännen</span>
-                                    <span class="cardUserDetailsDate">2024-12-08</span>
-                                </div>
+                    <article class="card" title="Sallad" aria-labelledby="article05">
+                        <img src="./assets/photos/card/sallad.png" alt="" class="cardImage" width="240px"
+                            height="240px">
+                        <img src="./assets/images/icon-watermark.svg" alt="" class="watermark" width="200px"
+                            height="200px">
+                        <ul class="cardSelectors" role="list">
+                            <li><span class="selector selectorFast">Snabbväxande</span></li>
+                            <li><span class="selector selectorEdible">Ätbart</span></li>
+                            <li><span class="selector selectorGreen">Grönska</span></li>
+                        </ul>
+                        <h3 id="article05">Sallad</h3>
+                        <p>Sallad är en av de enklaste grönsakerna att odla och ger snabba resultat för färska
+                            måltider.</p>
+                        <div class="cardUser">
+                            <div class="cardUserAvatar">
+                                <img src="./assets/images/icon-avatar.svg" alt="" width="60px" height="60px">
                             </div>
-                        </a>
-                        <!-------------------------------Start Dubletter--------------------------------------->
-                        <a href="#" class="card" title="Gurka">
-                            <img src="./assets/photos/card/cucumber.jpg" alt="" class="cardImage" width="240px"
-                                height="240px">
-                            <img src="./assets/images/icon-watermark.svg" alt="" class="watermark" width="200px"
-                                height="200px">
-                            <ul class="cardSelectors" role="list">
-                                <li><span class="selector selectorFlower">Blommor</span></li>
-                                <li><span class="selector selectorEdible">Ätbart</span></li>
-                                <li><span class="selector selectorGreen">Grönska</span></li>
-                            </ul>
-                            <h3>Gurka</h3>
-                            <p>Gurka växer snabbt, är enkel att odla och ger mängder med gurkor, bara man är noga med
-                                vattning, omplantering,duschning och gödsling.</p>
-                            <div class="cardUser">
-                                <div class="cardUserAvatar">
-                                    <img src="./assets/images/icon-avatar.svg" alt="" width="60px" height="60px">
-                                </div>
-                                <div class="cardUserDetails">
-                                    <span class="cardUserDetailsName">Coolio</span>
-                                    <span class="cardUserDetailsDate">2024-04-01</span>
-                                </div>
+                            <div class="cardUserDetails">
+                                <span class="cardUserDetailsName">Grönis</span>
+                                <span class="cardUserDetailsDate">2024-12-06</span>
                             </div>
-                        </a>
+                        </div>
+                    </article>
 
-                        <a href="#" class="card" title="Tomat">
-                            <img src="./assets/photos/card/tomato.jpg" alt="" class="cardImage" width="240px"
-                                height="240px">
-                            <img src="./assets/images/icon-watermark.svg" alt="" class="watermark" width="200px"
-                                height="200px">
-                            <ul class="cardSelectors" role="list">
-                                <li><span class="selector selectorSunloving">Solälskande</span></li>
-                                <li><span class="selector selectorEasy">Lättodlat</span></li>
-                                <li><span class="selector selectorEdible">Ätbart</span></li>
-                            </ul>
-                            <h3>Tomat</h3>
-                            <p>En perfekt grönsak att odla på balkongen eller i trädgården. Ger riklig skörd under
-                                sommaren.</p>
-                            <div class="cardUser">
-                                <div class="cardUserAvatar">
-                                    <img src="./assets/images/icon-avatar.svg" alt="" width="60px" height="60px">
-                                </div>
-                                <div class=" cardUserDetails">
-                                    <span class="cardUserDetailsName">Anna Odlare</span>
-                                    <span class="cardUserDetailsDate">2024-12-05</span>
-                                </div>
+                    <article class="card" title="Ormbunke" aria-labelledby="article06">
+                        <img src="./assets/photos/card/ormbunke.jpg" alt="" class="cardImage" width="240px"
+                            height="240px">
+                        <img src="./assets/images/icon-watermark.svg" alt="" class="watermark" width="200px"
+                            height="200px">
+                        <ul class="cardSelectors" role="list">
+                            <li><span class="selector selectorAir">Luftfuktande</span></li>
+                            <li><span class="selector selectorEdible">Grönska</span></li>
+                            <li><span class="selector selectorDecorative">Dekorativ</span></li>
+                        </ul>
+                        <h3 id="article06">Ormbunke</h3>
+                        <p>En klassisk växt som passar perfekt i badrummet eller på skuggiga platser.</p>
+                        <div class="cardUser">
+                            <div class="cardUserAvatar">
+                                <img src="./assets/images/icon-avatar.svg" alt="" width="60px" height="60px">
                             </div>
-                        </a>
+                            <div class="cardUserDetails">
+                                <span class="cardUserDetailsName">Naturvännen</span>
+                                <span class="cardUserDetailsDate">2024-12-08</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
 
-                        <a href="#" class="card" title="Pelargon">
-                            <img src="./assets/photos/card/pelargon.jpg" alt="" class="cardImage" width="240px"
-                                height="240px">
-                            <img src="./assets/images/icon-watermark.svg" alt="" class="watermark" width="200px"
-                                height="200px">
-                            <ul class="cardSelectors" role="list">
-                                <li><span class="selector selectorDecorative">Dekorativ</span></li>
-                                <li><span class="selector selectorColorful">Färgstark</span></li>
-                                <li><span class="selector selectorRobust">Tålig</span></li>
-                                <li><span class="selector selectorFlower">Blommor</span></li>
-                            </ul>
-                            <h3>Pelargon</h3>
-                            <p>En vacker och lättskött blomma som trivs både inne och ute under sommaren.</p>
-                            <div class="cardUser">
-                                <div class="cardUserAvatar">
-                                    <img src="./assets/images/icon-avatar.svg" alt="" width="60px" height="60px">
-                                </div>
-                                <div class="cardUserDetails">
-                                    <span class="cardUserDetailsName">Blomsterkalle</span>
-                                    <span class="cardUserDetailsDate">2024-12-03</span>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="#" class="card" title="Basilika">
-                            <img src="./assets/photos/card/basil.jpg" alt="" class="cardImage" width="240px"
-                                height="240px">
-                            <img src="./assets/images/icon-watermark.svg" alt="" class="watermark" width="200px"
-                                height="200px">
-                            <ul class="cardSelectors" role="list">
-                                <li><span class="selector selectorDecorative">Dekorativ</span></li>
-                                <li><span class="selector selectorColorful">Färgstark</span></li>
-                                <li><span class="selector selectorRobust">Tålig</span></li>
-                            </ul>
-                            <h3>Basilika</h3>
-                            <p>En fantastisk krydda för pastarätter och sallader. Trivs bäst i ett soligt fönster.</p>
-                            <div class="cardUser">
-                                <div class="cardUserAvatar">
-                                    <img src="./assets/images/icon-avatar.svg" alt="" width="60px" height="60px">
-                                </div>
-                                <div class="cardUserDetails">
-                                    <span class="cardUserDetailsName">Krydd-Malin</span>
-                                    <span class="cardUserDetailsDate">2024-12-07</span>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="#" class="card" title="Sallad">
-                            <img src="./assets/photos/card/sallad.png" alt="" class="cardImage" width="240px"
-                                height="240px">
-                            <img src="./assets/images/icon-watermark.svg" alt="" class="watermark" width="200px"
-                                height="200px">
-                            <ul class="cardSelectors" role="list">
-                                <li><span class="selector selectorFast">Snabbväxande</span></li>
-                                <li><span class="selector selectorEdible">Ätbart</span></li>
-                                <li><span class="selector selectorGreen">Grönska</span></li>
-                            </ul>
-                            <h3>Sallad</h3>
-                            <p>Sallad är en av de enklaste grönsakerna att odla och ger snabba resultat för färska
-                                måltider.</p>
-                            <div class="cardUser">
-                                <div class="cardUserAvatar">
-                                    <img src="./assets/images/icon-avatar.svg" alt="" width="60px" height="60px">
-                                </div>
-                                <div class="cardUserDetails">
-                                    <span class="cardUserDetailsName">Grönis</span>
-                                    <span class="cardUserDetailsDate">2024-12-06</span>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="#" class="card" title="Ormbunke">
-                            <img src="./assets/photos/card/ormbunke.jpg" alt="" class="cardImage" width="240px"
-                                height="240px">
-                            <img src="./assets/images/icon-watermark.svg" alt="" class="watermark" width="200px"
-                                height="200px">
-                            <ul class="cardSelectors" role="list">
-                                <li><span class="selector selectorAir">Luftfuktande</span></li>
-                                <li><span class="selector selectorEdible">Grönska</span></li>
-                                <li><span class="selector selectorDecorative">Dekorativ</span></li>
-                            </ul>
-                            <h3>Ormbunke</h3>
-                            <p>En klassisk växt som passar perfekt i badrummet eller på skuggiga platser.</p>
-                            <div class="cardUser">
-                                <div class="cardUserAvatar">
-                                    <img src="./assets/images/icon-avatar.svg" alt="" width="60px" height="60px">
-                                </div>
-                                <div class="cardUserDetails">
-                                    <span class="cardUserDetailsName">Naturvännen</span>
-                                    <span class="cardUserDetailsDate">2024-12-08</span>
-                                </div>
-                            </div>
-                        </a>
-                        <!-------------------------------Slut Dubletter--------------------------------------->
-                    </div>
-                </section>
-            </div>
-            <div>
-                <section class="information container" aria-labelledby="headingHistory">
+            <section class="container">
+                <div class="information" aria-labelledby="headingHistory">
                     <div class="greenRound">
                         <img src="./assets/images/icon-planting.svg" alt="">
                     </div>
@@ -397,32 +252,36 @@
                             quaerat doloribus?</p>
                         <a href="#" class="greenButton">Planterade plantor</a>
                     </div>
-                </section>
-            </div>
-            <div>
+                </div>
+            </section>
+            <div class="empty">
                 &nbsp;
             </div>
         </main>
 
-        <footer>
-            <div class="footerAbout" aria-labelledby="headingAbout">
-                <h3 id="headingAbout">Om oss</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, veniam ducimus aut sint atque ullam
-                    alias perspiciatis
-                    fuga. Consequuntur nesciunt ea corrupti aperiam fugit inventore ratione earum. Iure, eius molestias?
-                </p>
-                <a>Telefon: 020-1234567</a>
-                <a>E-post: info@plannedplant.com</a>
-            </div>
-            <div class="footerMenu hideWhenMobile">
-                <nav>
-                    <ul role="list">
-                        <li><a href="#">Hem</a></li>
-                        <li><a href="#">Historik</a></li>
-                        <li><a href="#">Tips</a></li>
-                        <li><a href="#">Kontakt</a></li>
-                    </ul>
-            </div>
+        <footer class="container">
+            <section class="footerSelect">
+                <div class="footerAbout" aria-labelledby="headingAbout">
+                    <h3 id="headingAbout">Om oss</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, veniam ducimus aut sint atque
+                        ullam
+                        alias perspiciatis fuga. Consequuntur nesciunt ea corrupti aperiam fugit inventore ratione
+                        earum.
+                        Iure, eius molestias?
+                    </p>
+                    <a>Telefon: 020-1234567</a>
+                    <a>E-post: info@plannedplant.com</a>
+                </div>
+                <div class="footerMenu hideWhenMobile">
+                    <nav>
+                        <ul role="list">
+                            <li><a href="#">Hem</a></li>
+                            <li><a href="#">Historik</a></li>
+                            <li><a href="#">Tips</a></li>
+                            <li><a href="#">Kontakt</a></li>
+                        </ul>
+                </div>
+            </section>
         </footer>
     </body>
 
