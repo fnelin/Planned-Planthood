@@ -185,7 +185,7 @@ button
   --hero-border-desktop: calc(var(--hero-border-tablet)*2);
 
   --hero-img-size-mobile: 151px;
-  --hero-img-size-tablet: 235px;
+  --hero-img-size-tablet: 205px;
   /*Testade för att se om det fungerade att beräkna bildernas storlek baserad på definerad container. --hero-img-size-tablet: calc(var(--container-width-tablet)/3); */
   --hero-img-size-desktop: unset;
 
@@ -554,7 +554,7 @@ body
 {
   display: grid;
   /*Magic formula from mr Powell*/
-  grid-template-columns: repeat(auto-fit, minmax(min(12.5rem, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(12rem, 100%), 1fr));
   gap: calc(var(--spacing-base)*0.5);
 }
 
@@ -579,6 +579,7 @@ body
   >*
   {
     grid-column: 2;
+    margin-inline: 2%;
   }
 
 }
