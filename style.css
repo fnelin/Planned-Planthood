@@ -952,6 +952,11 @@ main
   }
 }
 
+li:has(.skipLink)
+{
+  padding-top: 0.25rem;
+}
+
 .visually-hidden
 {
   clip: rect(0 0 0 0);
