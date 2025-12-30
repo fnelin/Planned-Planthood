@@ -157,9 +157,6 @@ button
   /* Spacing */
   --spacing-base: 1rem;
 
-  --flow-space: 1.75em;
-  --flow-space-lg: 4em;
-
   /*Formulärens input*/
   --input-padding: 1.25rem;
   --input-radius: 1.5rem;
@@ -717,7 +714,6 @@ header
 {
   padding: var(--fs-200) var(--fs-100);
   transition: 350ms;
-
 }
 
 .headerLogo
@@ -729,7 +725,8 @@ header
 }
 
 .headerLogo,
-.headerMenuLink
+.headerMenuLink,
+.skipLink
 {
 
   &:hover,
@@ -861,31 +858,6 @@ main
   }
 }
 
-/*** Utilities ***/
-
-.visually-hidden
-{
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-/*Vattenmärket för cards*/
-.watermark
-{
-  grid-area: 1/1;
-  opacity: 25%;
-  align-self: center;
-  justify-self: center;
-  width: 60%;
-  height: auto;
-}
-
-/*Lägger Selectors sist så de inte ligger i vägen under utvecklingen.*/
 .selector
 {
   text-transform: uppercase;
@@ -951,4 +923,52 @@ main
 .selectorFast
 {
   background-color: var(--clr-fast);
+}
+
+/*** Utilities ***/
+
+.skip
+{
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+
+  &:focus-within
+  {
+    color: var(--clr-accent);
+    background-color: var(--clr-neutral-100);
+    border: var(--border-hero);
+    box-shadow: var(--border-shadow);
+    position: absolute;
+    padding: 0.5rem;
+    left: 1rem;
+    top: 1rem;
+    margin: 1.75rem;
+    width: auto;
+    height: auto;
+  }
+}
+
+.visually-hidden
+{
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.watermark
+{
+  grid-area: 1/1;
+  opacity: 25%;
+  align-self: center;
+  justify-self: center;
+  width: 60%;
+  height: auto;
 }

@@ -16,7 +16,17 @@
     <body>
         <header class="container">
             <section class="headerBar">
-                <a href="#" title="Hem" class="headerLogo" aria-hidden="true">
+                <div class="skip">
+                    <h3>Hoppa till:</h3><br>
+                    <ul role="list">
+                        <li><a href="#hero" class="skipLink">Översikt</a></li>
+                        <li><a href="#newsletter" class="skipLink">Nyhetsbrev</a></li>
+                        <li><a href="#allPlants" class="skipLink">Galleriet</a></li>
+                        <li><a href="#headingHistory" class="skipLink">Historia</a></li>
+                        <li><a href="#headingAbout" class="skipLink">Kontakt</a></li>
+                    </ul>
+                </div>
+                <a href="#" title="Hem" class="headerLogo">
                     <svg width="35" height="50" viewBox="0 0 214 210" xmlns="http://www.w3.org/2000/svg" alt="">
                         <g fill="none" stroke="currentcolor" stroke-width="12">
                             <path
@@ -25,7 +35,7 @@
                                 d="M115.122 194.336C115.527 193.897 115.927 193.455 116.319 193.009L153.69 169.521C182.93 151.143 191.451 112.997 172.598 84.3362C169.529 79.6722 163.25 78.3762 158.555 81.3272L121.425 104.664C118.17 100 114.303 95.6362 109.83 91.6843L66.4654 53.3677C61.8146 49.2582 54.6598 49.6021 50.4409 54.1641C22.9065 83.9378 25.2893 129.917 55.732 156.816L99.097 195.132C103.748 199.242 110.903 198.898 115.122 194.336Z" />
                         </g>
                     </svg>
-                    <svg width="100" height="50" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg" alt="">
+                    <svg width="150" height="50" viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg" alt="">
                         <text x="0" y="25" font-family="Open Sans" font-size="12" fill="currentcolor"
                             text-anchor="center">
                             <tspan>PLANNED</tspan>
@@ -57,7 +67,7 @@
 
         <main>
             <section class="container" aria-labelledby="heroH1">
-                <h1 id="heroH1" class="center">Våra uppskattade växter</h1>
+                <h1 id="heroH1" class="center" id="hero">Våra uppskattade växter</h1>
                 <p class="heroIngress">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, ex vero
                     harum
                     recusandae et,
@@ -77,7 +87,8 @@
                 <div class="information" aria-label="Nyhetsbrev">
                     <form class="informationForm" method="post">
                         <Label for="email">
-                            <h2 aria-hidden="true">Anmäl dig till vårt nyhetsbrev så du inte missar en utsådd!</h2>
+                            <h2 aria-hidden="true" id="newsletter">Anmäl dig till vårt nyhetsbrev så du inte missar en
+                                utsådd!</h2>
                         </Label>
                         <div class="informationWrapInputs">
                             <input type="email" id="email" placeholder="namn@domän.se" autocomplete="email" required>
@@ -115,7 +126,6 @@
                             </div>
                         </div>
                     </article>
-
 
                     <article class="card" title="Tomat" aria-labelledby="article02">
                         <img src="./assets/photos/card/tomato.jpg" alt="" class="cardImage" width="240" height="240">
@@ -253,7 +263,6 @@
                             </div>
                         </div>
                     </article>
-
 
                     <article class="card" title="Tomat" aria-labelledby="article08">
                         <img src="./assets/photos/card/tomato.jpg" alt="" class="cardImage" width="240" height="240">
