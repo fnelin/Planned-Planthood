@@ -517,7 +517,6 @@ body
 {
   display: flex;
   flex-wrap: wrap;
-  /* gap: calc(var(--spacing-base)*0.25); */
 
 }
 
@@ -564,14 +563,6 @@ body
   justify-self: center;
   padding-block: var(--spacing-base);
 }
-
-/* .container
-{
-  width: var(--container-width);
-  margin: var(--container-margin);
-  transition: var(--container-transition);
-}
- */
 
 /*
  Ändrade lite för att få bort en nivå av div taggar men ändå ha background-color bleed
@@ -740,7 +731,6 @@ header
   }
 }
 
-
 .heroBanner
 {
   border: var(--border-hero) solid var(--clr-neutral-100);
@@ -756,9 +746,6 @@ header
   {
     width: var(--image-hero-size);
     height: var(--image-hero-size);
-    /*La till nedan för att bilderna inte ska se skeva ut när gridcellerna ändras och bilderna placeras annorlunda jämfört med desktop och orginal-apect-ratio*/
-    object-fit: cover;
-    overflow: hidden;
   }
 
   /*
@@ -813,7 +800,6 @@ header
   align-items: center;
   gap: 2rem;
 }
-
 
 .informationForm
 {
@@ -935,6 +921,7 @@ main
   width: 1px;
   height: 1px;
   overflow: hidden;
+  text-align: right;
 
   &:focus-within
   {
@@ -949,13 +936,27 @@ main
     margin: 1.75rem;
     width: auto;
     height: auto;
+    display: flex;
+    gap: 0.5rem;
   }
 }
 
-li:has(.skipLink)
+#skipLinkHeader
+{
+  font-size: var(--fs-500);
+  text-align: left;
+}
+
+.skipLink
+{
+  padding-inline: 0.5rem;
+  border-radius: 5px;
+}
+
+/* li:has(.skipLink)
 {
   padding-top: 0.25rem;
-}
+} */
 
 .visually-hidden
 {
