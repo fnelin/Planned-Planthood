@@ -1,5 +1,5 @@
 -Kommenterade bort color-schema för body i css då jag inte hinner ta fram färgschema för darkmode.
--La till tre containers för de huvudsakliga upplösningarna desktop >= 1024, tablet >= 768 & mobil < 768.
+-La till tre containers för de huvudsakliga upplösningarna desktop >= 1024, tablet >= 768 & mobil < 768 omräknat till rem.
 -Skapade två folders för resursfiler. En för avatarer och flyttade in en default samt en för fotografier.
 -Länk bilder till hero grid:Bas: https://picsum.photos/160/250 Dubbel https://picsum.photos/320/500 Dubbel bredd https://picsum.photos/320/250 
 -Bilderna till cards laddades ned och ifrån google istället så mer passande alternativ presenteras.
@@ -7,4 +7,5 @@
 -För att placera skicka knappen till formuläret i textfältet tog jag först hjälp av https://stackoverflow.com/questions/69313378/button-inside-input-html-css men kom senare på att det var en dum lösning (i mobil vy bryter sig knappen ur textrutan) och istället tog bort border på textboxen, lät submit ligga fritt och sätta border på omslutande div istället.
 -Hittade bloggen https://www.codestudy.net/blog/force-an-image-to-fit-and-keep-aspect-ratio/ för att hjälpa mig förstå hur man i css skalar bilder.
 -Vattenmärket gör att bilderna inte riktigt fungerar i firefox. Antar att det har att göra med hur webbläsaren tolkar grid storleken med stackade bilder. I chromium läsare tas den största bildens plats medan firefox verkar ta den bilden med högs z-värde.
+--Antagandet var fel. Det var den undre bilden vars overflow hamnade under selectorerna i firefox. Kan ha fixat med att ta bort height:auto och ersatt med object-fit i cardImage.
 -Korten nu artiklar stylade som (ej fungerande) länkar. Alternativen att bild/heading/text länkar till detaljsidan. Selectors kan togglas. Användarinformationen länkar till användarsidan. Beslut inväntas
