@@ -461,8 +461,8 @@ body
 {
   grid-area: 1/1;
   /*WidthUnset för att .card justify-items stretch ska fylla ut bilden kant till kant. heightAuto för att säkerställa korrekt aspect ratio.*/
-  width: unset;
-  height: auto;
+  width: 100%;
+  object-fit: cover;
 
 }
 
@@ -902,11 +902,6 @@ main
   border-radius: 5px;
 }
 
-/* li:has(.skipLink)
-{
-  padding-top: 0.25rem;
-} */
-
 .visually-hidden
 {
   clip: rect(0 0 0 0);
@@ -925,5 +920,4 @@ main
   align-self: center;
   justify-self: center;
   width: 60%;
-  height: auto;
 }
