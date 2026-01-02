@@ -73,7 +73,7 @@ button
 }
 
 /*** Theme ***/
-/**--------------------START VARIABLES SECTION-------------------------**/
+
 :root
 {
   /* color definitions */
@@ -155,12 +155,59 @@ button
   --input-padding: 1.25rem;
   --input-radius: 1.5rem;
 
-  --transition-base: all 300ms linear;
+  /*Mjuka upp övergångarna när man ändrar upplösningen
+  (överarbetade för egen tydlighet)*/
+  --transition-element: all;
+  --transition-time: 300ms;
+  --transition-effect: linear;
+  --transition-base: var(--transition-element) var(--transition-time) var(--transition-effect);
 
+
+  /*Storlekar på container som sätts i mediaqueries*/
+  /* 320px std */
+  --container-width-mobile: 20rem;
+  /* 640px std*/
+  --container-width-tablet: 40rem;
+  /* 1024px std*/
+  --container-width-desktop: 64rem;
+  --container-margin: auto;
+  --container-transition: var(--transition-base);
+
+  /*Variabler till herobilden samlade på ett ställe för att sättas i mediaqueries*/
+  --hero-border-mobile: calc(var(--hero-border-tablet)*0.75);
+  --hero-border-tablet: 12px;
+  --hero-border-desktop: calc(var(--hero-border-tablet)*2);
+
+  --hero-img-size-mobile: 151px;
+  --hero-img-size-tablet: 205px;
+  --hero-img-size-desktop: unset;
+
+  /*
+Använde https: //cssgrid-generator.netlify.app/ för att designa grid
+Och instruktioner ifrån https: //www.w3schools.com/css/css_grid_item_name.asp
+för att placera ut bilderna enligt mall.
+*/
+
+  --hero-img-columns-mobile: repeat(2, 1fr);
+  --hero-img-columns-tablet: repeat(3, 1fr);
+  --hero-img-columns-desktop: repeat(6, 1fr);
+
+  --hero-img-rows-mobile: repeat(3, 1fr);
+  --hero-img-rows-tablet: repeat(2, 1fr);
+  --hero-img-rows-desktop: repeat(2, 1fr);
+
+  --hero-img-gridarea-mobile:
+    'imgOne imgTwo'
+    'imgThree imgFour'
+    'imgFive imgSix';
+  --hero-img-gridarea-tablet:
+    'imgOne imgTwo imgThree'
+    'imgFour imgFive imgSix';
+  --hero-img-gridarea-desktop:
+    'imgOne imgOne imgTwo imgThree imgFour imgFour'
+    'imgOne imgOne imgFive imgFive imgSix imgSix';
 }
 
-/**--------------------END VARIABLES SECTION-------------------------**/
-/**--------------------START COMMON SECTION-------------------------**/
 /*** Global/base ***/
 h1,
 h2,
@@ -195,8 +242,7 @@ a
   }
 }
 
-/**--------------------END COMMON SECTION-------------------------**/
-/**--------------------START MEDIA SECTION-------------------------**/
+/* Generella formateringsregler för de tre olika upplösningar*/
 /*Mobil*/
 @media(max-width: 40rem)
 {
@@ -208,7 +254,7 @@ a
 
   .container
   {
-    --container-width: 20rem;
+    --container-width: var(--container-width-mobile);
     font-size: var(--fs-500);
   }
 
@@ -225,17 +271,14 @@ a
 
   .heroBanner
   {
-    --border-hero: calc(var(--spacing-base)*0.5);
-    --hero-img-columns: repeat(2, 1fr);
-    --hero-img-rows: repeat(3, 1fr);
-    --hero-img-gridarea:
-      'imgOne imgTwo'
-      'imgThree imgFour'
-      'imgFive imgSix';
+    --border-hero: var(--hero-border-mobile);
+    --hero-img-columns: var(--hero-img-columns-mobile);
+    --hero-img-rows: var(--hero-img-rows-mobile);
+    --hero-img-gridarea: var(--hero-img-gridarea-mobile);
 
     >img
     {
-      --image-hero-size: 151px;
+      --image-hero-size: var(--hero-img-size-mobile);
     }
   }
 
@@ -293,7 +336,7 @@ a
 
   .container
   {
-    --container-width: 40rem;
+    --container-width: var(--container-width-tablet);
   }
 
   h1,
@@ -315,16 +358,14 @@ a
 
   .heroBanner
   {
-    --border-hero: calc(var(--spacing-base)*0.75);
-    --hero-img-columns: repeat(3, 1fr);
-    --hero-img-rows: repeat(2, 1fr);
-    --hero-img-gridarea:
-      'imgOne imgTwo imgThree'
-      'imgFour imgFive imgSix';
+    --border-hero: var(--hero-border-tablet);
+    --hero-img-columns: var(--hero-img-columns-tablet);
+    --hero-img-rows: var(--hero-img-rows-tablet);
+    --hero-img-gridarea: var(--hero-img-gridarea-tablet);
 
     img
     {
-      --image-hero-size: 205px;
+      --image-hero-size: var(--hero-img-size-tablet);
     }
   }
 
@@ -371,7 +412,7 @@ a
 
   .container
   {
-    --container-width: 64rem;
+    --container-width: var(--container-width-desktop);
   }
 
   h1,
@@ -392,16 +433,14 @@ a
 
   .heroBanner
   {
-    --border-hero: calc(var(--spacing-base)*1.5);
-    --hero-img-columns: repeat(6, 1fr);
-    --hero-img-rows: repeat(2, 1fr);
-    --hero-img-gridarea:
-      'imgOne imgOne imgTwo imgThree imgFour imgFour'
-      'imgOne imgOne imgFive imgFive imgSix imgSix';
+    --border-hero: var(--hero-border-desktop);
+    --hero-img-columns: var(--hero-img-columns-desktop);
+    --hero-img-rows: var(--hero-img-rows-desktop);
+    --hero-img-gridarea: var(--hero-img-gridarea-desktop);
 
     img
     {
-      --image-hero-size: unset;
+      --image-hero-size: var(--hero-img-size-desktop);
     }
   }
 
@@ -411,8 +450,6 @@ a
   }
 }
 
-/**--------------------END MEDIA SECTION-------------------------**/
-/**--------------------START DOCUMENT SECTION----------------------**/
 body
 {
   font-family: var(--font-base);
@@ -423,6 +460,10 @@ body
 {
   display: grid;
   grid-template-rows: subgrid;
+  /*
+  Satte span 5 istället för 1/6 för att fortsätta kunna wrappa korten
+  när container width ändras
+  */
   grid-row: span 5;
   border: 1px solid var(--clr-neutral-200);
   box-shadow: var(--border-shadow);
@@ -437,6 +478,8 @@ body
     margin-inline: var(--spacing-base);
   }
 
+  /*Osäker på hur hover effekten för kort länkarna skulle se ut så gjorde liknannde
+    som på pannkakorna*/
   &:hover,
   &:focus
   {
@@ -516,6 +559,10 @@ body
   padding-block: var(--spacing-base);
 }
 
+/*
+ Ändrade lite för att få bort en nivå av div taggar men ändå ha background-color bleed
+  (https: //www.youtube.com/watch?v=6l24PIccgqU)
+  */
 .container
 {
   display: grid;
